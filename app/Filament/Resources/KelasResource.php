@@ -40,6 +40,8 @@ class KelasResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nama_kelas')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('deskripsi')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

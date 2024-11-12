@@ -27,7 +27,12 @@ class RuanganResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('nama_ruangan')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('deskripsi')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -35,7 +40,18 @@ class RuanganResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('nama_ruangan')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('deskripsi')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

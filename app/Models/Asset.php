@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Asset extends Model
 {
@@ -11,11 +13,11 @@ class Asset extends Model
         'kelompok_id','nama_asset','kategori_asset','ruangan_id','deskripsi'
     ];
 
-    public function ruangan(): belongsTo
+    public function ruangan(): BelongsTo
     {
         return $this->belongsTo(Ruangan::class);
     }
-    public function kelompok(): hasMany
+    public function kelompok(): HasMany
     {
         return $this->hasMany(Kelompok::class);
     }

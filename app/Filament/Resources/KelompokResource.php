@@ -42,6 +42,8 @@ class KelompokResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nama_kelompok')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('deskripsi')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

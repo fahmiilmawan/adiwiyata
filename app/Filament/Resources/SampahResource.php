@@ -51,6 +51,8 @@ class SampahResource extends Resource
                 Tables\Columns\TextColumn::make('kelas_id')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('deskripsi')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

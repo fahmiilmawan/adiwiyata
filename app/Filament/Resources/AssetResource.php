@@ -27,7 +27,18 @@ class AssetResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('kelompok_id')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('nama_asset')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('kategori_asset')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('ruangan_id')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -35,6 +46,14 @@ class AssetResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('kelompok_id')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('nama_asset')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('kategori_asset')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('ruangan.nama_ruangan')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

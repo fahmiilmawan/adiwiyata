@@ -27,7 +27,15 @@ class PeternakanResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('nama_hewan')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('jenis_hewan')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('deskripsi')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -35,7 +43,20 @@ class PeternakanResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('nama_hewan')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('jenis_hewan')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('deskripsi')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
