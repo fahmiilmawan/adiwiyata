@@ -30,8 +30,11 @@ class SampahResource extends Resource
                 Forms\Components\TextInput::make('nama_sampah')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('kategori_sampah')
-                    ->required(),
+                Forms\Components\Select::make('kategori_sampah')
+                    ->options([
+                        'organik' => 'Organik',
+                        'anorganik' => 'Anorganik',
+                    ]),
                 Forms\Components\TextInput::make('kelas_id')
                     ->required()
                     ->numeric(),
@@ -48,7 +51,7 @@ class SampahResource extends Resource
                 Tables\Columns\TextColumn::make('nama_sampah')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('kategori_sampah'),
-                Tables\Columns\TextColumn::make('kelas_id')
+                Tables\Columns\TextColumn::make('kelas.nama_kelas')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('deskripsi')

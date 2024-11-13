@@ -30,9 +30,11 @@ class PeternakanResource extends Resource
                 Forms\Components\TextInput::make('nama_hewan')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('jenis_hewan')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\Select::make('jenis_hewan')
+                    ->options([
+                        'darat' => 'Darat',
+                        'air' => 'Air',
+                    ]),
                 Forms\Components\Textarea::make('deskripsi')
                     ->required()
                     ->columnSpanFull(),

@@ -27,18 +27,20 @@ class AssetResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('kelompok_id')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\select::make('kelompok_id')
+                    ->relationship('kelompok','nama_kelompok')
+                    ->required(),
                 Forms\Components\TextInput::make('nama_asset')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('kategori_asset')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('ruangan_id')
-                    ->required()
-                    ->columnSpanFull(),
+                Forms\Components\Select::make('kategori_asset')
+                    ->options([
+                        'terpakai' => 'Terpakai',
+                        'tidak terpakai' => 'Tidak Terpakai',
+                    ]),
+                Forms\Components\Select::make('ruangan_id')
+                    ->relationship('ruangan','nama_ruangan')
+                    ->required(),
             ]);
     }
 

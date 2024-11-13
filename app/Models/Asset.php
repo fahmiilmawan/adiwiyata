@@ -17,8 +17,8 @@ class Asset extends Model
     {
         return $this->belongsTo(Ruangan::class);
     }
-    public function kelompok(): HasMany
+    public function kelompok(): belongsTo
     {
-        return $this->hasMany(Kelompok::class);
+        return $this->belongsTo(Kelompok::class);
     }
 }

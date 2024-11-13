@@ -8,6 +8,7 @@ use App\Models\Tanaman;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -36,12 +37,16 @@ class TanamanResource extends Resource
                 Forms\Components\TextInput::make('nama_tanaman')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('kategori_tanaman')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\Select::make('kategori_tanaman')
+                    ->options([
+                        'toga' => 'Toga',
+                        'konsumsi' => 'Konsumsi',
+                        'hias' => 'Hias',
+                    ]),
                 Forms\Components\Textarea::make('deskripsi')
                     ->required()
                     ->columnSpanFull(),
+
             ]);
     }
 
