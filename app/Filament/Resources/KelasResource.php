@@ -27,7 +27,7 @@ class KelasResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nama_kelas')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)->columnSpanFull(),
                 Forms\Components\Textarea::make('deskripsi')
                     ->required()
                     ->columnSpanFull(),

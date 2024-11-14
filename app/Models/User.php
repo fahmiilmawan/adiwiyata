@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'kelompok_id'
     ];
 
     /**
@@ -46,12 +49,9 @@ class User extends Authenticatable
         ];
     }
 
-    public function kelompok(): hasMany
+    public function kelompok(): HasMany
     {
         return $this->hasMany(Kelompok::class);
     }
-    public function peternakan(): hasMany
-    {
-        return $this->hasMany(Peternakan::class);
-    }
+
 }

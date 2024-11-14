@@ -14,6 +14,7 @@ class KelompokSeeder extends Seeder
     public function run(): void
     {
         Kelompok::create([
+            'id' =>1,
             'nama_kelompok' =>'Pokja 1',
             'deskripsi' => 'Pokja 1',
         ]);
