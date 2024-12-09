@@ -5,8 +5,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
-Route::get('/pokja', function () {
-    return view('pokja');
-})->name('pokja');
-
+})->name("index");
+Route::get('/koleksi-tanaman-adiwiyata', function () {
+    return view('koleksi');
+})->name('koleksi');
+Route::get('/program-kerja-adiwiyata', function () {
+    return view('program-kerja');
+})->name('program-kerja');
+Route::get('/kelompok-kerja-adiwiyata', function () {
+    return view('kelompok-kerja');
+})->name('kelompok-kerja');
