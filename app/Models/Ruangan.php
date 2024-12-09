@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Ruangan extends Model
 {
@@ -11,7 +12,7 @@ class Ruangan extends Model
         'nama_ruangan','deskripsi'
     ];
 
-    public function asset(): hasMany
+    public function asset(): HasMany
     {
         return $this->hasMany(Asset::class);
     }

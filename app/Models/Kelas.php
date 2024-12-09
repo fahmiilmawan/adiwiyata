@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Kelas extends Model
 {
@@ -11,8 +12,8 @@ class Kelas extends Model
         'nama_kelas','deskripsi'
     ];
 
-    public function sampah(): hasMany
+    public function bankSampah(): HasMany
     {
-        return $this->hasMany(Sampah::class);
+        return $this->hasMany(bankSampah::class);
     }
 }

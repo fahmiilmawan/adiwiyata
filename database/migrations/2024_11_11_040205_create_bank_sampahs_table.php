@@ -17,7 +17,11 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->unsignedBigInteger('kelas_id');
             $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('CASCADE')->onUpdate('CASCADE');
-            
+            $table->unsignedBigInteger('jenis_sampah_id');
+            $table->foreign('jenis_sampah_id')->references('id')->on('jenis_sampahs')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->double('jumlah');
+            $table->double('harga');
+            $table->double('total_harga');
             $table->timestamps();
         });
     }

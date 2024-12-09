@@ -49,9 +49,25 @@ class User extends Authenticatable
         ];
     }
 
-    public function kelompok(): HasMany
+    public function kelompok(): BelongsTo
     {
-        return $this->hasMany(Kelompok::class);
+        return $this->belongsTo(Kelompok::class);
+    }
+    public function bankSampah(): HasMany
+    {
+        return $this->hasMany(BankSampah::class);
+    }
+    public function asset(): HasMany
+    {
+        return $this->hasMany(Asset::class);
+    }
+    public function peternakan(): HasMany
+    {
+        return $this->hasMany(Peternakan::class);
+    }
+    public function tanaman(): HasMany
+    {
+        return $this->hasMany(Tanaman::class);
     }
 
 }
