@@ -48,7 +48,8 @@ class AssetResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('kelompok_id')
+                Tables\Columns\TextColumn::make('kelompok.nama_kelompok')
+                ->label('Kelompok')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nama_asset')
                     ->searchable(),

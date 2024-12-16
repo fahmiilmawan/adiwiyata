@@ -57,7 +57,7 @@
     <!-- Navigasi Bar -->
     @include("layouts.partials.navbar")
 
-    <div class="bg-primary text-white p-2 flex items-center gap-2 z-50">
+    <div class="bg-primary text-white p-2 flex items-center gap-2">
         <a href="" class="font-semibold fa-solid fa-arrow-left"></a>
         <h1 class="font-semibold">Program Kerja Adiwiyata</h1>
     </div>

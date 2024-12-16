@@ -33,6 +33,11 @@
             height: 45vh;
         }
 
+        /* Scrolling */
+        #tanaman-hias, #tanaman-obat-keluarga, #tanaman-konsumsi {
+            scroll-margin-top: 70px;
+        }
+
         /* Scrolling Bar */
         ::-webkit-scrollbar {
             display: none;
@@ -66,7 +71,7 @@
                 <h1 class="text-2xl font-semibold text-white">Kategori</h1>
                 <div class="bg-secondary h-1 mx-auto w-1/5"></div>
                 <div class="grid lg:grid-cols-3 bg-primary gap-5 mt-10 pb-3">
-                    <a href=""
+                    <a href="{{route('koleksi')}}#tanaman-hias"
                         class="bg-primary hover:bg-green-900 transition-all ease-in-out duration-500 text-white p-5 justify-items-center border-2 border-secondary rounded">
                         <img src="{{asset("image/tanaman-hias.svg")}}" alt=""
                             class="bg-secondary w-14 h-14 p-2 rounded-full">
@@ -75,7 +80,7 @@
                         </div>
                     </a>
 
-                    <a href=""
+                    <a href="{{route('koleksi')}}#tanaman-obat-keluarga"
                         class="bg-primary hover:bg-green-900 transition-all ease-in-out duration-500 text-white p-5 justify-items-center border-2 border-secondary rounded">
                         <img src="{{asset("image/tanaman-obat-keluarga.svg")}}" alt=""
                             class="bg-secondary w-14 h-14 p-2 rounded-full">
@@ -83,7 +88,7 @@
                             <h1 class="text-xl font-semibold">Tanaman Obat Keluarga</h1>
                         </div>
                     </a>
-                    <a href=""
+                    <a href="{{route('koleksi')}}#tanaman-konsumsi"
                         class="bg-primary hover:bg-green-900 transition-all ease-in-out duration-500 text-white p-5 justify-items-center border-2 border-secondary rounded">
                         <img src="{{asset("image/tanaman-konsumsi.svg")}}" alt=""
                             class="bg-secondary w-14 h-14 p-2 rounded-full">
@@ -96,7 +101,7 @@
         </section>
 
         <!-- Tanaman Konsumsi Section -->
-        <section class="tanaman-konsumsi mt-10 mx-10">
+        <section class="tanaman-konsumsi mt-10 mx-10" id="tanaman-hias">
             <div class="bg-primary rounded p-5 text-center text-yellow-500 items-center">
                 <h1 class="text-2xl font-semibold">Tanaman Hias</h1>
                 <h1 class="">(Terbagi kedalam 7 taman dan 1 lorong)</h1>
@@ -822,7 +827,7 @@
         </section>
 
         <!-- Tanaman Obat Keluarga Section -->
-        <section class="tanaman-obat-keluarga mt-10 mx-10">
+        <section class="tanaman-obat-keluarga mt-10 mx-10" id="tanaman-obat-keluarga">
             <div class="bg-primary rounded p-5 text-center text-yellow-500 items-center">
                 <h1 class="text-2xl font-semibold">Tanaman Obat Keluarga</h1>
             </div>
@@ -1024,7 +1029,7 @@
         </section>
 
         <!-- Tanaman Konsumsi Section -->
-        <section class="tanaman-konsumsi mt-10 mx-10">
+        <section class="tanaman-konsumsi mt-10 mx-10" id="tanaman-konsumsi">
             <div class="bg-primary rounded p-5 text-center text-yellow-500 items-center">
                 <h1 class="text-2xl font-semibold">Tanaman Konsumsi</h1>
             </div>

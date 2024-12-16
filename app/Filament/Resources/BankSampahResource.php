@@ -93,7 +93,7 @@ class BankSampahResource extends Resource
                 ->reactive()
                 ->afterStateUpdated(function (callable $set, $get) {
                     self::hitungTotalHarga($set, $get);
-                }),
+                })->columnSpanFull(),
 
             TextInput::make('total_harga')
                 ->label('Total Harga')

@@ -25,22 +25,6 @@
             font-family: 'Poppins', Gill Sans MT, Calibri, 'Trebuchet MS', sans-serif;
         }
 
-        .mobile-menu {
-            position: fixed;
-            /* Height of navbar */
-            top: 64px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #186635;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .mobile-menu.show {
-            transform: translateX(0);
-        }
-
         /* Hero Section */
         .carousel {
             transform: translateX(0);
@@ -110,7 +94,7 @@
     @include('layouts.partials.navbar')
 
     <!-- Hero Section -->
-    <section class="hero-section bg-green-500/15 z-10" id="home">
+    <section class="hero-section bg-green-500/15" id="home">
         <div class="relative w-full h-[100vh] overflow-hidden">
 
             <!-- Logo and Text Container (Fixed Position) -->
@@ -205,25 +189,25 @@
         <!-- Kelompok Kerja Section -->
         <section class="kelompok-kerja bg-cover text-white text-center p-2 lg:p-4 mt-10 bg-top" id="kelompok-kerja">
             <div class="mt-10">
-                <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold">KELOMPOK KERJA ADIWIYATA</h1>
+                <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold">KADER ADIWIYATA</h1>
                 <h1 class="text-lg lg:text-xl font-semibold text-secondary">SMK TARUNA HARAPAN 1 CIPATAT</h1>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 m-5 lg:m-10 gap-5 justify-items-center">
 
-                <!-- Kelompok Kerja 1 -->
-                <div class="kelompok-kerja-1 bg-quaternary p-2 rounded w-auto">
+                <!-- Kader 1 -->
+                <div class="kader-1 bg-quaternary p-2 rounded w-auto">
                     <img src="{{asset('image/pokja-1.jpg')}}" alt="" class="aspect-video">
                     <div class="py-2">
-                        <h1 class="text-sm text-left text-gray-500">Kelompok Kerja 1</h1>
+                        <h1 class="text-sm text-left text-gray-500">Kader 1</h1>
                         <h1 class="lg:text-2xl text-left text-gray-800 font-semibold">Tanaman & Pembibitan</h1>
                         <div class="h-1 bg-primary w-full"></div>
                         <h1 class="text-sm text-gray-800 text-justify h-20">
-                            Kelompok kerja di bidang Tanaman dan Pembibitan dalam program Adiwiyata memiliki fokus
+                            Kader di bidang Tanaman dan Pembibitan dalam program Adiwiyata memiliki fokus
                             penting dalam mengelola tanaman konsumsi, tanaman obat, dan tanaman yang dibudidayakan
                             secara aquaphonik.
                         </h1>
-                        <div class="button-kelompok-kerja mt-14">
-                            <a href=""
+                        <div class="button-kader mt-14">
+                            <a href="{{route('kader')}}#tanaman-dan-pembibitan"
                                 class="bg-primary hover:bg-green-900 transition-all ease-in-out duration-500 p-2 rounded">
                                 BACA SELENGKAPNYA
                             </a>
@@ -231,19 +215,19 @@
                     </div>
                 </div>
 
-                <!-- Kelompok Kerja 2 -->
-                <div class="kelompok-kerja-2 bg-quaternary p-2 rounded w-auto">
+                <!-- Kader 2 -->
+                <div class="kader-2 bg-quaternary p-2 rounded w-auto">
                     <img src="{{asset('image/pokja-2.jpg')}}" alt="" class="aspect-video">
                     <div class="py-2">
-                        <h1 class="text-sm text-left text-gray-500">Kelompok Kerja 2</h1>
+                        <h1 class="text-sm text-left text-gray-500">Kader 2</h1>
                         <h1 class="lg:text-2xl text-left text-gray-800 font-semibold">Kompos & Bank Sampah</h1>
                         <div class="h-1 bg-primary w-full"></div>
                         <h1 class="text-sm text-gray-800 text-justify h-20">
-                            Kelompok kerja di bidang Kompos dan Bank Sampah dalam program Adiwiyata bertugas mengelola
+                            Kader di bidang Kompos dan Bank Sampah dalam program Adiwiyata bertugas mengelola
                             sampah di lingkungan sekolah dengan prinsip pemilahan dan pengolahan yang berkelanjutan.
                         </h1>
-                        <div class="button-kelompok-kerja mt-14">
-                            <a href=""
+                        <div class="button-kader mt-14">
+                            <a href="{{route('kader')}}#kompos-dan-bank-sampah"
                                 class="bg-primary hover:bg-green-900 transition-all ease-in-out duration-500 p-2 rounded">
                                 BACA SELENGKAPNYA
                             </a>
@@ -251,19 +235,19 @@
                     </div>
                 </div>
 
-                <!-- Kelompok Kerja 3 -->
-                <div class="kelompok-kerja-3 bg-quaternary p-2 rounded w-auto">
+                <!-- Kader 3 -->
+                <div class="kader-3 bg-quaternary p-2 rounded w-auto">
                     <img src="{{asset('image/pokja-3.jpg')}}" alt="" class="aspect-video">
                     <div class="py-2">
-                        <h1 class="text-sm text-left text-gray-500">Kelompok Kerja 3</h1>
+                        <h1 class="text-sm text-left text-gray-500">Kader 3</h1>
                         <h1 class="lg:text-2xl text-left text-gray-800 font-semibold">Sanitasi & Kamar Mandi</h1>
                         <div class="h-1 bg-primary w-full"></div>
                         <h1 class="text-sm text-gray-800 text-justify h-20">
-                            Kelompok kerja di bidang Sanitasi dan Kamar mandi dalam program Adiwiyata bertanggung jawab
+                            Kader di bidang Sanitasi dan Kamar mandi dalam program Adiwiyata bertanggung jawab
                             memastikan kebersihan, kerapian, dan keteraturan fasilitas sanitasi di sekolah.
                         </h1>
-                        <div class="button-kelompok-kerja mt-14">
-                            <a href=""
+                        <div class="button-kader mt-14">
+                            <a href="{{route('kader')}}#sanitasi-dan-kamar-mandi"
                                 class="bg-primary hover:bg-green-900 transition-all ease-in-out duration-500 p-2 rounded">
                                 BACA SELENGKAPNYA
                             </a>
@@ -271,19 +255,19 @@
                     </div>
                 </div>
 
-                <!-- Kelompok Kerja 4 -->
-                <div class="kelompok-kerja-4 bg-quaternary p-2 rounded w-auto">
+                <!-- Kader 4 -->
+                <div class="kader-4 bg-quaternary p-2 rounded w-auto">
                     <img src="{{asset('image/pokja-4.jpg')}}" alt="" class="aspect-video">
                     <div class="py-2">
-                        <h1 class="text-sm text-left text-gray-500">Kelompok Kerja 4</h1>
+                        <h1 class="text-sm text-left text-gray-500">Kader 4</h1>
                         <h1 class="lg:text-2xl text-left text-gray-800 font-semibold">Taman & Hutan Sekolah</h1>
                         <div class="h-1 bg-primary w-full"></div>
                         <h1 class="text-sm text-gray-800 text-justify">
-                            Kelompok kerja di bidang Taman dan Hutan Sekolah dalam program Adiwiyata memiliki peran
+                            Kader di bidang Taman dan Hutan Sekolah dalam program Adiwiyata memiliki peran
                             penting dalam menjaga keindahan, kelestarian, dan fungsi edukasi dari taman sekolah.
                         </h1>
-                        <div class="button-kelompok-kerja mt-14">
-                            <a href=""
+                        <div class="button-kader mt-14">
+                            <a href="{{route('kader')}}#taman-dan-hutan-sekolah"
                                 class="bg-primary hover:bg-green-900 transition-all ease-in-out duration-500 p-2 rounded">
                                 BACA SELENGKAPNYA
                             </a>
@@ -291,19 +275,19 @@
                     </div>
                 </div>
 
-                <!-- Kelompok Kerja 5 -->
-                <div class="kelompok-kerja-5 bg-quaternary p-2 rounded w-auto">
+                <!-- Kader 5 -->
+                <div class="kader-5 bg-quaternary p-2 rounded w-auto">
                     <img src="{{asset('image/pokja-5.jpg')}}" alt="" class="aspect-video">
                     <div class="py-2">
-                        <h1 class="text-sm text-left text-gray-500">Kelompok Kerja 5</h1>
+                        <h1 class="text-sm text-left text-gray-500">Kader 5</h1>
                         <h1 class="lg:text-2xl text-left text-gray-800 font-semibold">Kreasi Daur Ulang Sampah</h1>
                         <div class="h-1 bg-primary w-full"></div>
                         <h1 class="text-sm text-gray-800 text-justify h-20">
-                            Kelompok kerja di bidang Kreasi Daur Ulang Sampah dalam program Adiwiyata bertanggung jawab
+                            Kader di bidang Kreasi Daur Ulang Sampah dalam program Adiwiyata bertanggung jawab
                             mengolah sampah menjadi barang yang bermanfaat dan memiliki nilai estetika.
                         </h1>
-                        <div class="button-kelompok-kerja mt-14">
-                            <a href=""
+                        <div class="button-kader mt-14">
+                            <a href="{{route('kader')}}#kreasi-daur-ulang-sampah"
                                 class="bg-primary hover:bg-green-900 transition-all ease-in-out duration-500 p-2 rounded">
                                 BACA SELENGKAPNYA
                             </a>
@@ -323,25 +307,23 @@
                     </div>
                 </div>
                 <div class="snap-mandatory overflow-x-scroll flex mt-10 h-auto mx-5 lg:mx-0 rounded">
-                    <div class="shrink-0 gap-5 flex items-center">
+                    <div class="shrink-0 gap-5 flex items-center w-[27rem">
 
                         <!-- Program Kerja 1 -->
-                        <div class="program-kerja-1 bg-primary p-5 rounded w-80">
+                        <div class="program-kerja-1 bg-primary p-5 rounded w-[27rem]">
                             <div class="flex items-center gap-2 justify-center">
-                                <img src="{{asset('image/bank-sampah.svg')}}" alt=""
-                                    class="aspect-square bg-secondary rounded-full p-1 w-14">
-                                <h1 class="lg:text-xl font-semibold text-white">BANK SAMPAH</h1>
+                                <i class="fa fa-leaf text-4xl text-secondary"></i>
+                                <h1 class="lg:text-xl font-semibold text-white">Pengolahan Sampah Organik</h1>
                             </div>
                             <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
                             <div class="mt-5">
-                                <div class="h-36">
+                                <div class="h-44">
                                     <h1 class="text-sm lg:text-base text-white text-justify">
-                                        Bank sampah adalah sebuah sistem pengelolaan sampah yang memungkinkan masyarakat
-                                        untuk menukarkan sampah yang bisa didaur ulang dengan nilai ekonomi tertentu.
+                                        Program ini bertujuan mengolah sampah organik menjadi produk bermanfaat seperti kompos, maggot, eco enzym, dan MOL. Teknologi sederhana seperti dekomposter dan pemanfaatan air lindi digunakan untuk mendukung pengelolaan limbah secara efisien.
                                     </h1>
                                 </div>
                                 <div class="mt-20 text-center">
-                                    <a href=""
+                                    <a href="{{route('program-kerja')}}#bank-sampah"
                                         class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 rounded">
                                         BACA SELENGKAPNYA
                                     </a>
@@ -350,23 +332,20 @@
                         </div>
 
                         <!-- Program Kerja 2 -->
-                        <div class="program-kerja-2 bg-primary p-5 rounded w-80">
+                        <div class="program-kerja-2 bg-primary p-5 rounded w-[27rem]">
                             <div class="flex items-center gap-2 justify-center">
-                                <img src="{{asset('image/maggot.svg')}}" alt=""
-                                    class="aspect-square bg-secondary rounded-full p-1 w-14">
-                                <h1 class="lg:text-xl font-semibold text-white">BUDIDAYA MAGGOT</h1>
+                                <i class="fa fa-recycle text-4xl text-secondary"></i>
+                                <h1 class="lg:text-xl font-semibold text-white">Pengolahan Sampah Anorganik</h1>
                             </div>
                             <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
                             <div class="mt-5">
-                                <div class="h-36">
+                                <div class="h-44">
                                     <h1 class="text-sm lg:text-base text-white text-justify">
-                                        Budidaya maggot (larva lalat Black Soldier Fly atau BSF) adalah metode
-                                        pemanfaatan larva untuk mengolah sampah organik, seperti sisa makanan atau
-                                        limbah pertanian, menjadi kompos atau pakan hewan.
+                                        Program ini mengelola sampah anorganik melalui bank sampah yang mendorong masyarakat memilah dan menyetor sampah. Sampah yang terkumpul akan didaur ulang atau dimanfaatkan kembali, sehingga menciptakan nilai ekonomi dan mengurangi pencemaran lingkungan.
                                     </h1>
                                 </div>
                                 <div class="mt-20 text-center">
-                                    <a href=""
+                                    <a href="{{route('program-kerja')}}#bank-sampah"
                                         class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 rounded">
                                         BACA SELENGKAPNYA
                                     </a>
@@ -375,22 +354,20 @@
                         </div>
 
                         <!-- Program Kerja 3 -->
-                        <div class="program-kerja-3 bg-primary p-5 rounded w-80">
+                        <div class="program-kerja-3 bg-primary p-5 rounded w-[27rem]">
                             <div class="flex items-center gap-2 justify-center">
-                                <img src="{{asset('image/pembibitan.svg')}}" alt=""
-                                    class="aspect-square bg-secondary rounded-full p-1 w-14">
-                                <h1 class="lg:text-xl font-semibold text-white">PEMBIBITAN</h1>
+                                <i class="fa fa-tint text-4xl text-secondary"></i>
+                                <h1 class="lg:text-xl font-semibold text-white">Konservasi Air</h1>
                             </div>
                             <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
                             <div class="mt-5">
-                                <div class="h-36">
+                                <div class="h-44">
                                     <h1 class="text-sm lg:text-base text-white text-justify">
-                                        Pembibitan adalah proses awal dalam budidaya tanaman untuk menumbuhkan bibit
-                                        dari biji atau bahan tanam lainnya sebelum dipindahkan ke lahan utama.
+                                        Program ini memanfaatkan limbah air wudhu untuk menyiram tanaman atau keperluan lainnya, sehingga mengurangi pemborosan air bersih. Air yang masih layak digunakan dikumpulkan dalam sistem penampungan sederhana untuk dimanfaatkan ulang.
                                     </h1>
                                 </div>
                                 <div class="mt-20 text-center">
-                                    <a href=""
+                                    <a href="{{route('program-kerja')}}#bank-sampah"
                                         class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 rounded">
                                         BACA SELENGKAPNYA
                                     </a>
@@ -399,142 +376,42 @@
                         </div>
 
                         <!-- Program Kerja 4 -->
-                        <div class="program-kerja-4 bg-primary p-5 rounded w-80">
+                        <div class="program-kerja-4 bg-primary p-5 rounded w-[27rem]">
                             <div class="flex items-center gap-2 justify-center">
-                                <img src="{{asset('image/aquaphonik.svg')}}" alt=""
-                                    class="aspect-square bg-secondary rounded-full p-1 w-14">
-                                <h1 class="lg:text-xl font-semibold text-white">AQUAPHONIK</h1>
+                                <i class="fa fa-bolt text-4xl text-secondary"></i>
+                                <h1 class="lg:text-xl font-semibold text-white">Konservasi Energi</h1>
                             </div>
                             <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
                             <div class="mt-5">
-                                <div class="h-36">
+                                <div class="h-44">
                                     <h1 class="text-sm lg:text-base text-white text-justify">
-                                        Aquaponik adalah sistem pertanian yang menggabungkan budidaya ikan (akuakultur)
-                                        dengan budidaya tanaman tanpa tanah (hidroponik) dalam satu ekosistem tertutup.
+                                        Program ini mendorong perilaku hemat energi, seperti mematikan perangkat yang tidak digunakan dan menggunakan teknologi hemat listrik. Edukasi masyarakat dilakukan untuk mengurangi konsumsi energi berlebihan yang berdampak pada lingkungan.
                                     </h1>
                                 </div>
                                 <div class="mt-20 text-center">
-                                    <a href=""
+                                    <a href="{{route('program-kerja')}}#bank-sampah"
                                         class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 rounded">
-                                        BACA SELENGKAPNYA</a>
+                                        BACA SELENGKAPNYA
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Program Kerja 5 -->
-                        <div class="program-kerja-5 bg-primary p-5 rounded w-80">
+                        <div class="program-kerja-5 bg-primary p-5 rounded w-[27rem]">
                             <div class="flex items-center gap-2 justify-center">
-                                <img src="{{asset('image/pupuk-organik-cair.svg')}}" alt=""
-                                    class="aspect-square bg-secondary rounded-full p-1 w-14">
-                                <h1 class="lg:text-xl font-semibold text-white">PUPUK ORGANIK CAIR</h1>
+                                <i class="fa fa-water text-4xl text-secondary"></i>
+                                <h1 class="lg:text-xl font-semibold text-white">Sanitasi & Drainase</h1>
                             </div>
                             <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
                             <div class="mt-5">
-                                <div class="h-36">
+                                <div class="h-44">
                                     <h1 class="text-sm lg:text-base text-white text-justify">
-                                        Pupuk organik cair adalah pupuk yang berbentuk cair dan dibuat dari bahan-bahan
-                                        organik, seperti sisa tanaman, kotoran hewan, atau limbah dapur.
+                                        Program ini berfokus pada pengelolaan sanitasi dan drainase untuk mencegah genangan serta banjir. Lingkungan yang bersih dan sehat diharapkan dapat mengurangi risiko penyakit akibat sanitasi buruk.
                                     </h1>
                                 </div>
                                 <div class="mt-20 text-center">
-                                    <a href=""
-                                        class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 rounded">
-                                        BACA SELENGKAPNYA
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Program Kerja 6 -->
-                        <div class="program-kerja-6 bg-primary p-5 rounded w-80">
-                            <div class="flex items-center gap-2 justify-center">
-                                <img src="{{asset('image/limbah-air-wudhu.svg')}}" alt=""
-                                    class="aspect-square bg-secondary rounded-full p-1 w-14">
-                                <h1 class="lg:text-xl font-semibold text-white">LIMBAH AIR WUDHU</h1>
-                            </div>
-                            <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
-                            <div class="mt-5">
-                                <div class="h-36">
-                                    <h1 class="text-sm lg:text-base text-white text-justify">
-                                        Pemanfaatan limbah air wudhu adalah upaya untuk mengelola dan menggunakan
-                                        kembali air bekas wudhu sehingga tidak terbuang sia-sia.
-                                    </h1>
-                                </div>
-                                <div class="mt-20 text-center">
-                                    <a href=""
-                                        class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 rounded">
-                                        BACA SELENGKAPNYA
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Program Kerja 7 -->
-                        <div class="program-kerja-7 bg-primary p-5 rounded w-80">
-                            <div class="flex items-center gap-2 justify-center">
-                                <img src="{{asset('image/label-tanaman.svg')}}" alt=""
-                                    class="aspect-square bg-secondary rounded-full p-1 w-14">
-                                <h1 class="lg:text-xl font-semibold text-white">LABEL TANAMAN</h1>
-                            </div>
-                            <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
-                            <div class="mt-5">
-                                <div class="h-36">
-                                    <h1 class="text-sm lg:text-base text-white text-justify">
-                                        Melabeli nama-nama tanaman dalam 4 bahasa, Indonesia, Latin, Inggris dan Sunda,
-                                        serta mencantumkan manfaatnya agar orang yang membaca mendapatkan ilmu terkait
-                                        tanaman yang dilabeli.
-                                    </h1>
-                                </div>
-                                <div class="mt-20 text-center">
-                                    <a href=""
-                                        class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 rounded">
-                                        BACA SELENGKAPNYA
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Program Kerja 8 -->
-                        <div class="program-kerja-8 bg-primary p-5 rounded w-80">
-                            <div class="flex items-center gap-2 justify-center">
-                                <img src="{{asset('image/ecobrick.svg')}}" alt=""
-                                    class="aspect-square bg-secondary rounded-full p-1 w-14">
-                                <h1 class="lg:text-xl font-semibold text-white">ECOBRICK</h1>
-                            </div>
-                            <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
-                            <div class="mt-5">
-                                <div class="h-36">
-                                    <h1 class="text-sm lg:text-base text-white text-justify">
-                                        Ecobrick adalah metode pengelolaan sampah plastik dengan cara memadatkan limbah
-                                        plastik ke dalam botol plastik hingga penuh dan padat.
-                                    </h1>
-                                </div>
-                                <div class="mt-20 text-center">
-                                    <a href=""
-                                        class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 rounded">
-                                        BACA SELENGKAPNYA
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Program Kerja 9 -->
-                        <div class="program-kerja-2 bg-primary p-5 rounded w-80">
-                            <div class="flex items-center gap-2 justify-center">
-                                <img src="{{asset('image/eco-enzym.svg')}}" alt=""
-                                    class="aspect-square bg-secondary rounded-full p-1 w-14">
-                                <h1 class="lg:text-xl font-semibold text-white">ECO ENZYME</h1>
-                            </div>
-                            <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
-                            <div class="mt-5">
-                                <div class="h-36">
-                                    <h1 class="lg:text-sm lg:text-base text-white text-justify">
-                                        Eco Enzyme adalah larutan serbaguna yang dibuat melalui fermentasi sampah
-                                        organik, seperti kulit buah dan sayuran, dengan campuran gula dan air.
-                                    </h1>
-                                </div>
-                                <div class="mt-20 text-center">
-                                    <a href=""
+                                    <a href="{{route('program-kerja')}}#bank-sampah"
                                         class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 rounded">
                                         BACA SELENGKAPNYA
                                     </a>

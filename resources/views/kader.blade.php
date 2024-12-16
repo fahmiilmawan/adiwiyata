@@ -70,7 +70,7 @@
     <section class="hero-section bg-green-500/15" id="home">
         <div class="bg-image content-center bg-green-500 mix-blend-overlay">
             <div class="text-center text-white font-semibold mx-5 lg:mx-0">
-                <h1 class="text-3xl">KELOMPOK KERJA - ADIWIYATA</h1>
+                <h1 class="text-3xl">KADER - ADIWIYATA</h1>
                 <h1 class="text-3xl">SMK TARUNA HARAPAN 1 CIPATAT</h1>
             </div>
         </div>
@@ -79,18 +79,18 @@
     <div class="bg-quaternary pt-4">
 
         <!-- Tanaman & Pembibitan Section -->
-        <section class="tanaman-dan-pembibitan p-4 mb-5" id="tanaman-dan-pembibitan">
-            <div class="mx-10 text-white">
+        <section class="tanaman-dan-pembibitan p-2 lg:p-4 mb-5" id="tanaman-dan-pembibitan">
+            <div class="mx-5 lg:mx-10 text-white">
                 <div class="text-center mt-20">
-                    <h1 class="text-2xl font-semibold">KELOMPOK KERJA 1</h1>
+                    <h1 class="text-2xl font-semibold">KADER 1</h1>
                     <h1 class="text-lg font-semibold">(Tanaman & Pembibitan)</h1>
                 </div>
                 <div class="mt-5 flex justify-center">
-                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="w-1/2 h-1/2 aspect-video">
+                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="lg:w-1/2 h-1/2 aspect-video">
                 </div>
                 <div class="mt-5">
                     <h1 class="text-justify">
-                        <span class="ms-5">Kelompok</span> kerja di bidang Tanaman dan Pembibitan dalam program
+                        <span class="ms-5">Kader</span> di bidang Tanaman dan Pembibitan dalam program
                         Adiwiyata memiliki fokus penting dalam mengelola tanaman konsumsi, tanaman obat, dan tanaman
                         yang dibudidayakan secara aquaponik. Tugas ini bertujuan untuk mendukung keberlanjutan
                         lingkungan sekolah sekaligus memberikan manfaat praktis bagi komunitas sekolah.
@@ -119,7 +119,7 @@
                         </div>
                         <div class="my-5">
                             <h1 class="text-justify">
-                                <span class="ms-5">Kelompok</span> ini bertugas mulai dari pembibitan hingga perawatan
+                                <span class="ms-5">Kader</span> ini bertugas mulai dari pembibitan hingga perawatan
                                 tanaman. Perawatan meliputi penyiraman, pemupukan, hingga pengelolaan media tanam untuk
                                 memastikan hasil optimal. Mereka juga bertanggung jawab menyusun jadwal panen dan
                                 pendistribusian hasil untuk digunakan di lingkungan sekolah atau masyarakat.
@@ -183,18 +183,18 @@
         </section>
 
         <!-- Kompos & Bank Sampah Section -->
-        <section class="kompos-dan-bank-sampah p-4 mb-5" id="kompos-dan-bank-sampah">
-            <div class="mx-10 text-white">
+        <section class="kompos-dan-bank-sampah p-2 lg:p-4 mb-5" id="kompos-dan-bank-sampah">
+            <div class="mx-5 lg:mx-10 text-white">
                 <div class="text-center mt-20">
-                    <h1 class="text-2xl font-semibold">KELOMPOK KERJA 2</h1>
+                    <h1 class="text-2xl font-semibold">KADER 2</h1>
                     <h1 class="text-lg font-semibold">(Kompos & Bank Sampah)</h1>
                 </div>
                 <div class="mt-5 flex justify-center">
-                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="w-1/2 h-1/2 aspect-video">
+                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="lg:w-1/2 h-1/2 aspect-video">
                 </div>
                 <div class="mt-5">
                     <h1 class="text-justify">
-                        <span class="ms-5">Kelompok</span> kerja di bidang Kompos dan Bank Sampah dalam program
+                        <span class="ms-5">Kader</span> di bidang Kompos dan Bank Sampah dalam program
                         Adiwiyata bertugas mengelola sampah di lingkungan sekolah dengan prinsip pemilahan dan
                         pengolahan yang berkelanjutan. Fokus utama kelompok ini adalah memilah sampah organik dan
                         anorganik serta memanfaatkannya untuk mendukung program penghijauan dan pengelolaan lingkungan.
@@ -204,7 +204,7 @@
                             <li>
                                 Tugas dan Prosedur Kerja
                                 <h1 class="text-justify">
-                                    <span class="ms-5">Setiap</span> anggota kelompok memiliki tanggung jawab untuk
+                                    <span class="ms-5">Setiap</span> anggota kader memiliki tanggung jawab untuk
                                     mengambil tong sampah dari setiap kelas setelah jam pelajaran selesai. Sampah yang
                                     terkumpul dipilah menjadi dua kategori:
                                 </h1>
@@ -252,7 +252,7 @@
                             <li>
                                 Edukasi dan Kolaborasi
                                 <h1 class="text-justify">
-                                    <span class="ms-5">Kelompok</span> kerja ini juga bertugas memberikan sosialisasi
+                                    <span class="ms-5">Kader</span> ini juga bertugas memberikan sosialisasi
                                     kepada siswa dan guru tentang pentingnya memilah sampah. Mereka bekerja sama dengan
                                     seluruh warga sekolah untuk memastikan pengelolaan sampah berjalan efektif. Program
                                     ini tidak hanya meningkatkan kebersihan sekolah tetapi juga menciptakan budaya
@@ -291,18 +291,18 @@
         </section>
 
         <!-- Sanitasi & Kamar Mandi Section -->
-        <section class="sanitasi-dan-kamar-mandi p-4 mb-5" id="sanitasi-dan-kamar-mandi">
-            <div class="mx-10 text-white">
+        <section class="sanitasi-dan-kamar-mandi p-2 lg:p-4 mb-5" id="sanitasi-dan-kamar-mandi">
+            <div class="mx-5 lg:mx-10 text-white">
                 <div class="text-center mt-20">
-                    <h1 class="text-2xl font-semibold">KELOMPOK KERJA 3</h1>
+                    <h1 class="text-2xl font-semibold">KADER 3</h1>
                     <h1 class="text-lg font-semibold">(Sanitasi & Kamar Mandi)</h1>
                 </div>
                 <div class="mt-5 flex justify-center">
-                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="w-1/2 h-1/2 aspect-video">
+                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="lg:w-1/2 h-1/2 aspect-video">
                 </div>
                 <div class="mt-5">
                     <h1 class="text-justify">
-                        <span class="ms-5">Kelompok</span> kerja di bidang Sanitasi dan Kamar mandi dalam program
+                        <span class="ms-5">Kader</span> di bidang Sanitasi dan Kamar mandi dalam program
                         Adiwiyata bertanggung jawab memastikan kebersihan, kerapian, dan keteraturan fasilitas sanitasi
                         di sekolah. Kelompok ini berfokus pada menciptakan lingkungan kamar mandi yang sehat, nyaman,
                         dan terjaga kebersihannya untuk mendukung kebiasaan hidup bersih di kalangan warga sekolah.
@@ -334,7 +334,7 @@
                             <li class="">
                                 Himbauan dan Edukasi
                                 <h1 class="text-justify">
-                                    <span class="ms-5">Kelompok</span> kerja ini juga bertugas memasang himbauan di area
+                                    <span class="ms-5">Kader</span> ini juga bertugas memasang himbauan di area
                                     kamar mandi, seperti:
                                 </h1>
                                 <ul class="ms-5 list-disc text-justify">
@@ -411,18 +411,18 @@
         </section>
 
         <!-- Taman & Hutan Sekolah Section -->
-        <section class="taman-dan-hutan-sekolah p-4 mb-5" id="taman-dan-hutan-sekolah">
-            <div class="mx-10 text-white">
+        <section class="taman-dan-hutan-sekolah p-2 lg:p-4 mb-5" id="taman-dan-hutan-sekolah">
+            <div class="mx-5 lg:mx-10 text-white">
                 <div class="text-center mt-20">
-                    <h1 class="text-2xl font-semibold">KELOMPOK KERJA 4</h1>
+                    <h1 class="text-2xl font-semibold">KADER 4</h1>
                     <h1 class="text-lg font-semibold">(Taman & Hutan Sekolah)</h1>
                 </div>
                 <div class="mt-5 flex justify-center">
-                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="w-1/2 h-1/2 aspect-video">
+                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="lg:w-1/2 h-1/2 aspect-video">
                 </div>
                 <div class="mt-5">
                     <h1 class="text-justify">
-                        <span class="ms-5">Kelompok</span> kerja di bidang Taman dan Hutan Sekolah dalam program
+                        <span class="ms-5">Kader</span> di bidang Taman dan Hutan Sekolah dalam program
                         Adiwiyata memiliki peran penting dalam menjaga keindahan, kelestarian, dan fungsi edukasi dari
                         taman sekolah. Fokus utama kelompok ini adalah merawat tanaman yang sudah ada, menambah
                         penghijauan, serta mengoptimalkan taman sebagai media pembelajaran lingkungan.
@@ -449,7 +449,7 @@
                             <li class="">
                                 Edukasi Melalui Label Tanaman
                                 <h1 class="text-justify">
-                                    <span class="ms-5">Kelompok</span> kerja ini juga bertugas membuat dan memasang
+                                    <span class="ms-5">Kader</span> ini juga bertugas membuat dan memasang
                                     label pada tanaman yang ada di taman. Label mencantumkan informasi seperti nama
                                     tanaman, nama ilmiah, manfaat, dan asal tanaman. Hal ini bertujuan agar taman
                                     sekolah tidak hanya menjadi area hijau, tetapi juga menjadi sarana edukasi bagi
@@ -479,7 +479,7 @@
                     </ol>
                     <div class="my-5">
                         <h1 class="text-justify">
-                            <span class="ms-5">Melalui</span> kegiatan ini, kelompok kerja Taman dan Hutan Sekolah tidak
+                            <span class="ms-5">Melalui</span> kegiatan ini, kader Taman dan Hutan Sekolah tidak
                             hanya menjaga keindahan lingkungan, tetapi juga berkontribusi menciptakan ruang hijau yang
                             mendukung pembelajaran dan membangun kesadaran ekologis di kalangan siswa serta pengunjung.
                         </h1>
@@ -514,18 +514,18 @@
         </section>
 
         <!-- Kreasi Daur Ulang Sampah Section -->
-        <section class="kreasi-daur-ulang-sampah p-4 mb-5" id="kreasi-daur-ulang-sampah">
-            <div class="mx-10 text-white">
+        <section class="kreasi-daur-ulang-sampah p-2 lg:p-4 mb-5" id="kreasi-daur-ulang-sampah">
+            <div class="mx-5 lg:mx-10 text-white">
                 <div class="text-center mt-20">
-                    <h1 class="text-2xl font-semibold">KELOMPOK KERJA 5</h1>
+                    <h1 class="text-2xl font-semibold">KADER 5</h1>
                     <h1 class="text-lg font-semibold">(Kreasi Daur Ulang Sampah)</h1>
                 </div>
                 <div class="mt-5 flex justify-center">
-                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="w-1/2 h-1/2 aspect-video">
+                    <img src="{{asset('image/slider-1.jpg')}}" alt="" class="lg:w-1/2 h-1/2 aspect-video">
                 </div>
                 <div class="mt-5">
                     <h1 class="text-justify">
-                        <span class="ms-5">Kelompok</span> kerja di bidang Kreasi Daur Ulang Sampah dalam program
+                        <span class="ms-5">Kader</span> di bidang Kreasi Daur Ulang Sampah dalam program
                         Adiwiyata bertanggung jawab mengolah sampah menjadi barang yang bermanfaat dan memiliki nilai
                         estetika. Fokus utama kelompok ini adalah memanfaatkan limbah seperti botol plastik untuk
                         membuat berbagai kerajinan kreatif, sekaligus mendukung pengurangan sampah di lingkungan
@@ -557,7 +557,7 @@
                             <li class="">
                                 Edukasi dan Kreativitas
                                 <h1 class="text-justify">
-                                    <span class="ms-5">Kelompok</span> ini memberikan edukasi kepada siswa lain tentang
+                                    <span class="ms-5">Kader</span> ini memberikan edukasi kepada siswa lain tentang
                                     pentingnya daur ulang sampah. Melalui kegiatan ini, siswa diajarkan untuk berpikir
                                     kreatif dalam memanfaatkan sampah menjadi produk yang memiliki nilai guna dan
                                     estetika.
@@ -586,7 +586,7 @@
                     </ol>
                     <div class="my-5">
                         <h1 class="text-justify">
-                            <span class="ms-5">Dengan</span> kegiatan ini, kelompok kerja tidak hanya membantu mengelola
+                            <span class="ms-5">Dengan</span> kegiatan ini, kader tidak hanya membantu mengelola
                             sampah, tetapi juga mendorong semangat kreativitas, inovasi, dan keberlanjutan dalam
                             kehidupan sehari-hari di sekolah.
                         </h1>

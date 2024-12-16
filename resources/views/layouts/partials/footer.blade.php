@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adiwiyata Test</title>
 
-    <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="./public/css/output.css">
+     <!-- Tailwind CSS -->
+    @Vite('resources/css/app.css')
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/ecde4d1cd4.js" crossorigin="anonymous"></script>

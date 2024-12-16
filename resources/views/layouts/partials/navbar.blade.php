@@ -7,37 +7,21 @@
     <title>Adiwiyata Test</title>
 
     <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="./public/css/output.css">
+    @Vite('resources/css/app.css')
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/ecde4d1cd4.js" crossorigin="anonymous"></script>
 
     <!-- CSS Internal -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-        :root {
-            scroll-behavior: smooth;
+        .dropdown-menu .nested-dropdown {
+            display: none;
+            left: 100%;
+            top: 0;
         }
 
-        body {
-            font-family: 'Poppins', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        .mobile-menu {
-            position: fixed;
-            /* Height of navbar */
-            top: 64px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #186635;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .mobile-menu.show {
-            transform: translateX(0);
+        .dropdown-menu .dropdown-item:hover .nested-dropdown {
+            display: block;
         }
     </style>
 </head>
@@ -45,268 +29,262 @@
 <body class="">
 
     <!-- Navigasi Bar -->
-    <nav class="bg-primary shadow-lg fixed w-full top-0 z-40">
-        <div class="max-w-7xl px-2 mx-5 lg:mx-10">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <img src="{{asset("image/adiwiyata.png")}}" alt="" class="w-32">
+    <nav class="bg-primary border-b border-gray-200 fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Brand -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img src="{{asset('image/Adiwiyata.png')}}" alt="" class="w-32">
+                    </div>
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-4">
-                    <a href="{{route("index")}}#home"
-                        class="text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded-md">
-                        Home
-                    </a>
-                    <a href="{{route("index")}}#about"
-                        class="text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded-md">
-                        About
-                    </a>
-
-                    <!-- Dropdown Kelompok Kerja -->
-                    <div class="relative" x-data="{ open: false }">
-                        <button
-                            @click="open = !open; document.getElementById('programDropdown').classList.add('hidden')"
-                            class="text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded-md">
-                            Kelompok Kerja
-                            <svg class="inline-block w-4 h-4 ml-1" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div id="kelompokDropdown" class="absolute hidden z-50 mt-2 w-72 bg-primary rounded-md shadow-lg">
-                            <a href="{{route('kelompok-kerja')}}#tanaman-dan-pembibitan" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Tanaman & Pembibitan
-                            </a>
-                            <a href="{{route('kelompok-kerja')}}#kompos-dan-bank-sampah" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Kompos & Bank Sampah
-                            </a>
-                            <a href="{{route('kelompok-kerja')}}#sanitasi-dan-kamar-mandi" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Sanitasi & Kamar Mandi
-                            </a>
-                            <a href="{{route('kelompok-kerja')}}#taman-dan-hutan-sekolah" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Taman & Hutan Sekolah
-                            </a>
-                            <a href="{{route('kelompok-kerja')}}#kreasi-daur-ulang-sampah" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Kreasi Daur Ulang Sampah
-                            </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="{{route('index')}}#home" class="text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="{{route('index')}}#about" class="text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <div class="relative group">
+                            <button class="text-white hover:bg-secondary transition-all ease-in-out duration-500 group px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                                <span>Kader</span>
+                                <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Main Dropdown menu -->
+                            <div class="dropdown-menu absolute hidden group-hover:block w-60 bg-primary rounded-md shadow-lg py-1">
+                                <a href="{{route('kader')}}#tanaman-dan-pembibitan" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Tanaman & Pembibitan</a>
+                                <a href="{{route('kader')}}#kompos-dan-bank-sampah" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Kompos & Bank Sampah</a>
+                                <a href="{{route('kader')}}#sanitasi-dan-kamar-mandi" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Sanitasi & Kamar Mandi</a>
+                                <a href="{{route('kader')}}#taman-dan-hutan-sekolah" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Taman & Hutan Sekolah</a>
+                                <a href="{{route('kader')}}#kreasi-daur-ulang-sampah" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Kreasi Daur Ulang Sampah</a>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <button class="text-white hover:bg-secondary transition-all ease-in-out duration-500 group px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                                <span>Program Kerja</span>
+                                <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Main Dropdown menu -->
+                            <div class="dropdown-menu absolute hidden group-hover:block w-72 bg-primary rounded-md shadow-lg py-1">
+                                <div class="dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                    <span class="">Pengolahan Sampah Organik</span>
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                    <!-- Nested Dropdown for Figma -->
+                                    <div class="nested-dropdown absolute w-48 bg-primary rounded-md shadow-lg py-1">
+                                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Kompos</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Budidaya Maggot</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Eco Enzym</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">MOL</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Air Lindi</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Eco Derma</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Dekomposter</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                    <span class="">Pengolahan Sampah Anorganik</span>
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                    <!-- Nested Dropdown for Figma -->
+                                    <div class="nested-dropdown absolute w-48 bg-primary hover:bg-secondary transition-all ease-in-out duration-500 rounded-md shadow-lg py-1">
+                                        <a href="#" class="block px-4 py-2 text-sm text-white">Bank Sampah</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                    <span class="">Konservasi Air</span>
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                    <!-- Nested Dropdown for Figma -->
+                                    <div class="nested-dropdown absolute w-48 bg-primary hover:bg-secondary transition-all ease-in-out duration-500 rounded-md shadow-lg py-1">
+                                        <a href="#" class="block px-4 py-2 text-sm text-white">Limbah Air Wudhu</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                    <span class="">Konservasi Energi</span>
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                    <!-- Nested Dropdown for Figma -->
+                                    <div class="nested-dropdown absolute w-48 bg-primary hover:bg-secondary transition-all ease-in-out duration-500 rounded-md shadow-lg py-1">
+                                        <a href="#" class="block px-4 py-2 text-sm text-white">Hemat Listrik</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">Sanitasi dan Drainase</a>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Dropdown Program Kerja -->
-                    <div class="relative" x-data="{ open: false }">
-                        <button
-                            @click="open = !open; document.getElementById('kelompokDropdown').classList.add('hidden')"
-                            class="text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded-md">
-                            Program Kerja
-                            <svg class="inline-block w-4 h-4 ml-1" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div id="programDropdown" class="absolute hidden z-50 mt-2 w-48 bg-primary rounded-md shadow-lg">
-                            <a href="{{route('program-kerja')}}#bank-sampah" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Bank Sampah
-                            </a>
-                            <a href="{{route('program-kerja')}}#budidaya-maggot" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Budidaya Maggot
-                            </a>
-                            <a href="{{route('program-kerja')}}#pembibitan" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Pembibitan
-                            </a>
-                            <a href="{{route('program-kerja')}}#aquaphonik" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Aquaphonik
-                            </a>
-                            <a href="{{route('program-kerja')}}#pupuk-organik-cair" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Pupuk Organik Cair
-                            </a>
-                            <a href="{{route('program-kerja')}}#limbah-air-wudhu" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Limbah Air Wudhu
-                            </a>
-                            <a href="{{route('program-kerja')}}#label-tanaman" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Label Tanaman
-                            </a>
-                            <a href="{{route('program-kerja')}}#ecobrick" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Ecobrick
-                            </a>
-                            <a href="{{route('program-kerja')}}#eco-enzyme" class="block px-4 py-2 text-white hover:bg-secondary text-center rounded border-b border-b-secondary">
-                                Eco Enzyme
-                            </a>
-                        </div>
-                    </div>
-
-                    <a href="{{route('koleksi')}}"
-                        class="text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded-md">
-                        Koleksi Tanaman
-                    </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="lg:hidden flex items-center">
-                    <button id="mobileMenuBtn"
-                        class="text-white hover:bg-green-900 transition-all ease-in-out duration-500 rounded p-2">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
+                <div class="hidden md:block">
+                    <button class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        Koleksi Tanaman
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
+
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Home</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">About</a>
+
+                <div class="space-y-1">
+                    <button class="kader-submenu-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary flex justify-between items-center">
+                        <span>Kader</span>
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden kader-submenu pl-4">
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Tanaman & Pembibitan</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Kompos & Bank Sampah</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Sanitasi & Kamar Mandi</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Taman & Hutan Sekolah</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Kreasi Daur Ulang Sampah</a>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <button class="mobile-submenu-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary flex justify-between items-center">
+                        <span>Program Kerja</span>
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden mobile-submenu pl-4">
+                        <div class="space-y-1">
+                            <button class="pso-nested-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary flex justify-between items-center">
+                                <span>Pengolahan Sampah Organik</span>
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="hidden pso-nested-menu pl-4">
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Kompos</a>
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Budidaya Maggot</a>
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Eco Enzym</a>
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">MOL</a>
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Air Lindi</a>
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Eco Derma</a>
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Dekomposter</a>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <button class="psa-nested-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary flex justify-between items-center">
+                                <span>Pengolahan Sampah Anorganik</span>
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="hidden psa-nested-menu pl-4">
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Bank Sampah</a>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <button class="ka-nested-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary flex justify-between items-center">
+                                <span>Konservasi Air</span>
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="hidden ka-nested-menu pl-4">
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Limbah Air Wudhu</a>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <button class="ke-nested-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary flex justify-between items-center">
+                                <span>Konservasi Energi</span>
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="hidden ke-nested-menu pl-4">
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Hemat Energi</a>
+                            </div>
+                        </div>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary">Sanitasi dan Drainase
+                        </a>
+                    </div>
+                </div>
+                <button class="w-full bg-yellow-500 hover:bg-secondary text-white px-4 py-2 rounded-lg text-sm font-medium">
+                    Koleksi Tanaman
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <!-- Mobile Menu - Now Fixed Position -->
-    <div id="mobileMenu" class="mobile-menu lg:hidden p-4 z-40">
-        <a href="{{route('index')}}#home"
-            class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded">
-            Home
-        </a>
-        <a href="{{route('index')}}#about"
-            class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded">
-            About
-        </a>
-
-        <!-- Mobile Kelompok Kerja Dropdown -->
-        <div class="relative">
-            <button id="mobileKelompokBtn"
-                class="w-full text-left text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded">
-                Kelompok Kerja
-                <svg class="inline-block w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <div id="mobileKelompokDropdown" class="hidden pl-6">
-                <a href="{{route('kelompok-kerja')}}#tanaman-dan-pembibitan"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Tanaman & Pembibitan
-                </a>
-                <a href="{{route('kelompok-kerja')}}#kompos-dan-bank-sampah"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Kompos & Bank Sampah
-                </a>
-                <a href="{{route('kelompok-kerja')}}#sanitasi-dan-kamar-mandi"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Sanitasi & Kamar Mandi
-                </a>
-                <a href="{{route('kelompok-kerja')}}#taman-dan-hutan-sekolah"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Taman & Hutan Sekolah
-                </a>
-                <a href="{{route('kelompok-kerja')}}#kreasi-daur-ulang-sampah"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Kreasi Daur Ulang Sampah
-                </a>
-            </div>
-        </div>
-
-        <!-- Mobile Program Kerja Dropdown -->
-        <div class="relative">
-            <button id="mobileProgramBtn"
-                class="w-full text-left text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded">
-                Program Kerja
-                <svg class="inline-block w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <div id="mobileProgramDropdown" class="hidden pl-6">
-                <a href="{{route('program-kerja')}}#bank-sampah"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Bank Sampah
-                </a>
-                <a href="{{route('program-kerja')}}#budidaya-maggot"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Budidaya Maggot
-                </a>
-                <a href="{{route('program-kerja')}}#pembibitan"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Pembibitan
-                </a>
-                <a href="{{route('program-kerja')}}#aquaphonik"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Aquaphonik
-                </a>
-                <a href="{{route('program-kerja')}}#pupuk-organik-cair"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Pupuk Organik Cair
-                </a>
-                <a href="{{route('program-kerja')}}#limbah-air-wudhu"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Limbah Air Wudhu
-                </a>
-                <a href="{{route('program-kerja')}}#label-tanaman"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Label Tanaman
-                </a>
-                <a href="{{route('program-kerja')}}#ecobrick"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Ecobrick
-                </a>
-                <a href="{{route('program-kerja')}}#eco-enzyme"
-                    class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 border-b border-b-secondary rounded">
-                    Eco Enzyme
-                </a>
-            </div>
-        </div>
-
-        <a href="{{route('koleksi')}}"
-            class="block text-white hover:bg-secondary transition-all ease-in-out duration-500 px-3 py-2 rounded">
-            Koleksi Tanaman
-        </a>
-    </div>
-
     <script>
-        // Mobile menu toggle with slide effect
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button')
+        const mobileMenu = document.querySelector('.mobile-menu')
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('show');
-        });
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden')
+        })
 
-        // Desktop dropdowns
-        const kelompokBtn = document.querySelector('[x-data="{ open: false }"]');
-        const programBtn = document.querySelectorAll('[x-data="{ open: false }"]')[1];
-        const kelompokDropdown = document.getElementById('kelompokDropdown');
-        const programDropdown = document.getElementById('programDropdown');
+        // Mobile submenu toggle
+        const mobileSubmenuButton = document.querySelector('.mobile-submenu-button')
+        const mobileSubmenu = document.querySelector('.mobile-submenu')
 
-        kelompokBtn.addEventListener('click', () => {
-            kelompokDropdown.classList.toggle('hidden');
-            programDropdown.classList.add('hidden');
-        });
+        mobileSubmenuButton.addEventListener('click', () => {
+            mobileSubmenu.classList.toggle('hidden')
+        })
 
-        programBtn.addEventListener('click', () => {
-            programDropdown.classList.toggle('hidden');
-            kelompokDropdown.classList.add('hidden');
-        });
+        // Kader submenu toggle
+        const kaderSubmenuButton = document.querySelector('.kader-submenu-button')
+        const kaderSubmenu = document.querySelector('.kader-submenu')
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!kelompokBtn.contains(e.target)) {
-                kelompokDropdown.classList.add('hidden');
-            }
-            if (!programBtn.contains(e.target)) {
-                programDropdown.classList.add('hidden');
-            }
-        });
+        kaderSubmenuButton.addEventListener('click', () => {
+            kaderSubmenu.classList.toggle('hidden')
+        })
 
-        // Mobile dropdowns
-        const mobileKelompokBtn = document.getElementById('mobileKelompokBtn');
-        const mobileProgramBtn = document.getElementById('mobileProgramBtn');
-        const mobileKelompokDropdown = document.getElementById('mobileKelompokDropdown');
-        const mobileProgramDropdown = document.getElementById('mobileProgramDropdown');
+        // PSO nested menu toggle
+        const psoNestedButton = document.querySelector('.pso-nested-button')
+        const psoNestedMenu = document.querySelector('.pso-nested-menu')
 
-        mobileKelompokBtn.addEventListener('click', () => {
-            mobileKelompokDropdown.classList.toggle('hidden');
-            mobileProgramDropdown.classList.add('hidden');
-        });
+        psoNestedButton.addEventListener('click', () => {
+            psoNestedMenu.classList.toggle('hidden')
+        })
 
-        mobileProgramBtn.addEventListener('click', () => {
-            mobileProgramDropdown.classList.toggle('hidden');
-            mobileKelompokDropdown.classList.add('hidden');
-        });
+        // PSA nested menu toggle
+        const psaNestedButton = document.querySelector('.psa-nested-button')
+        const psaNestedMenu = document.querySelector('.psa-nested-menu')
+
+        psaNestedButton.addEventListener('click', () => {
+            psaNestedMenu.classList.toggle('hidden')
+        })
+
+        // KA nested menu toggle
+        const kaNestedButton = document.querySelector('.ka-nested-button')
+        const kaNestedMenu = document.querySelector('.ka-nested-menu')
+
+        kaNestedButton.addEventListener('click', () => {
+            kaNestedMenu.classList.toggle('hidden')
+        })
+
+        // KE nested menu toggle
+        const keNestedButton = document.querySelector('.ke-nested-button')
+        const keNestedMenu = document.querySelector('.ke-nested-menu')
+
+        keNestedButton.addEventListener('click', () => {
+            keNestedMenu.classList.toggle('hidden')
+        })
     </script>
 </body>
 

@@ -12,6 +12,6 @@ Route::get('/koleksi-tanaman-adiwiyata', function () {
 Route::get('/program-kerja-adiwiyata', function () {
     return view('program-kerja');
 })->name('program-kerja');
-Route::get('/kelompok-kerja-adiwiyata', function () {
-    return view('kelompok-kerja');
-})->name('kelompok-kerja');
+Route::get('/kader-adiwiyata', function () {
+    return view('kader');
+})->name('kader');
