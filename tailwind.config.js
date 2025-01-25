@@ -12,16 +12,19 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                "sans": ["Figtree", ...defaultTheme.fontFamily.sans],
+                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                "primary": "#186635",
-                "secondary": "#c9af3c",
-                "tertiary": "white",
-                "quaternary": "#f2e8cf",
+                primary: "#186635",
+                secondary: "#c9af3c",
+                tertiary: "white",
+                quaternary: "#f2e8cf",
             },
             width: {
                 "1/7": "17.99999999999999%",
+            },
+            screens: {
+               
             },
         },
     },
