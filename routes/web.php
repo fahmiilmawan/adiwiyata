@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BankSampahController;
 use App\Http\Controllers\TanamanController;
+use App\Http\Controllers\LaporanPemasukanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,3 +19,5 @@ Route::get('/program-kerja-adiwiyata', function () {
 Route::get('/kader-adiwiyata', function () {
     return view('kader');
 })->name('kader');
+
+Route::get('/print-laporan-pemasukan',[LaporanPemasukanController::class, 'printPDF'])->name('print.laporan-pemasukan');
