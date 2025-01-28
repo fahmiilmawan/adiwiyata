@@ -11,6 +11,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\Summarizers\Sum;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -57,15 +58,19 @@ class LaporanPemasukanResource extends Resource
                     ->sortable(),
 
                 TextColumn::make('total_harga')
-                    ->label('Total Harga (Rp)')
+                    ->label('Total (Rp)')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->summarize([
+                        Sum::make('total_harga')
+                        ->label('Total Pemasukan'),
+                    ]),
             ])
             ->filters([
                 //
             ])
             ->actions([
-
+                //
             ])
             ->bulkActions([
                //
