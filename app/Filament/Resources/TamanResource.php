@@ -2,64 +2,45 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TanamanResource\Pages;
-use App\Filament\Resources\TanamanResource\RelationManagers;
-use App\Models\Tanaman;
+use App\Filament\Resources\TamanResource\Pages;
+use App\Filament\Resources\TamanResource\RelationManagers;
+use App\Models\Taman;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Forms\Components\Select;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class TanamanResource extends Resource
+class TamanResource extends Resource
 {
-    protected static ?string $model = Tanaman::class;
+    protected static ?string $model = Taman::class;
 
     protected static ?string $navigationGroup = 'Master Data';
 
-    protected static ?string $slug = 'tanaman';
+    protected static ?string $slug = 'taman';
 
-    protected static ?string $navigationLabel = 'Tanaman';
+    protected static ?string $navigationLabel = 'Taman';
 
-    protected ?string $heading = 'Tanaman';
+    protected ?string $heading = 'Taman';
+
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
-
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nama_tanaman')
+                Forms\Components\TextInput::make('nama_taman')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('nama_latin')
+                Forms\Components\TextInput::make('lokasi')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\FileUpload::make('gambar')
-                    ->image()
-                    ->disk('local')
-                    ->directory('uploads/images')
-                    ->visibility('local')
-                    ->required(),
-                Forms\Components\Select::make('kategori_tanaman')
-                    ->options([
-                        'toga' => 'Toga',
-                        'konsumsi' => 'Konsumsi',
-                        'hias' => 'Hias',
-                    ])
-                    ->required(),
-                Forms\Components\Select::make('taman_id')
-                    ->relationship('taman','nama_taman')
-                    ->required(),
-                Forms\Components\RichEditor::make('deskripsi')
+                Forms\Components\Textarea::make('deskripsi')
                     ->required()
-                    ->columnSpanFull(),
-
+                    ->maxLength(255),
             ]);
     }
 
@@ -67,9 +48,9 @@ class TanamanResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama_tanaman')
+                Tables\Columns\TextColumn::make('nama_taman')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('kategori_tanaman')
+                Tables\Columns\TextColumn::make('lokasi')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('deskripsi')
                     ->searchable(),
@@ -105,9 +86,9 @@ class TanamanResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTanamen::route('/'),
-            'create' => Pages\CreateTanaman::route('/create'),
-            'edit' => Pages\EditTanaman::route('/{record}/edit'),
+            'index' => Pages\ListTamen::route('/'),
+            'create' => Pages\CreateTaman::route('/create'),
+            'edit' => Pages\EditTaman::route('/{record}/edit'),
         ];
     }
 }

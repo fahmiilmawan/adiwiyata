@@ -41,6 +41,22 @@ class AssetResource extends Resource
                 Forms\Components\Select::make('ruangan_id')
                     ->relationship('ruangan','nama_ruangan')
                     ->required(),
+                Forms\Components\TextInput::make('stok')
+                    ->required(),
+                Forms\Components\Select::make('kondisi')
+                    ->options([
+                        'baik' => 'Baik',
+                        'rusak' => 'Rusak',
+                    ])
+                    ->required(),
+                Forms\Components\Select::make('jenis')
+                    ->options([
+                        'barang sekali pakai' => 'Barang sekali pakai',
+                        'barang berkelanjutan' => 'Barang berkelanjutan',
+                    ])
+                    ->required(),
+                Forms\Components\Textarea::make('deskripsi')
+                    ->required(),
             ]);
     }
 
@@ -57,6 +73,14 @@ class AssetResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('ruangan.nama_ruangan')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('jenis')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('kondisi')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('stok')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('deskripsi')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -71,6 +95,7 @@ class AssetResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
