@@ -72,7 +72,12 @@ class TanamanResource extends Resource
                 Tables\Columns\TextColumn::make('kategori_tanaman')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('deskripsi')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable()
+                    ,
+                Tables\Columns\ViewColumn::make('qr_code')
+                    ->label('QR Code')
+                    ->view('components.qr-code'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -81,6 +86,7 @@ class TanamanResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
             ])
             ->filters([
                 //

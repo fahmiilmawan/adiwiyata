@@ -9,7 +9,7 @@ class Tanaman extends Model
 {
     protected $table = 'tanaman';
     protected $fillable = [
-        'taman_id','nama_tanaman','nama_latin','kategori_tanaman','deskripsi','gambar'
+        'taman_id','nama_tanaman','nama_latin','kategori_tanaman','deskripsi','gambar','slug'
     ];
 
     public function taman(): BelongsTo

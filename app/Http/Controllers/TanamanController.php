@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\QRCode;
 use App\Models\Tanaman;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Http\Request;
 
 class TanamanController extends Controller
@@ -35,10 +37,32 @@ class TanamanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        return view('koleksi-detail');
+        $tanaman = Tanaman::where('slug', $slug)->firstOrFail();
+
+        return view('koleksi-detail', [
+            'tanaman' => $tanaman
+        ]);
     }
+
+    public function printQRCode()
+{
+    $tanaman = Tanaman::all();
+
+    // Tambahkan QR Code ke setiap tanaman
+    $tanaman->map(function ($item) {
+        $qrContent = route('koleksi-detail', ['slug' => $item->slug]);
+        $item->qrCode = (new QRCode($qrContent))->generate(); // Tambahkan properti qrCode
+        return $item;
+    });
+
+    // Load view untuk PDF
+    $pdf = FacadePdf::loadView('print.qr-code', compact('tanaman'));
+
+    // Unduh file PDF
+    return $pdf->download('qr-code.pdf');
+}
 
     /**
      * Show the form for editing the specified resource.
