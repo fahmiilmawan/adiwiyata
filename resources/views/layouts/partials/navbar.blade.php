@@ -205,10 +205,10 @@
                     </div>
 
                     <div class="hidden lg:block">
-                        <button
+                        <a href="{{ route('koleksi') }}"
                             class="bg-secondary hover:bg-yellow-500 transition-all ease-in-out duration-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
                             Koleksi Tanaman
-                        </button>
+                        </a>
                     </div>
 
                     <!-- Mobile menu button -->
