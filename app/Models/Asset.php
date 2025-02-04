@@ -10,7 +10,7 @@ class Asset extends Model
 {
     protected $table = 'assets';
     protected $fillable = [
-        'kelompok_id','nama_asset','kategori_asset','ruangan_id','deskripsi'
+        'kelompok_id','nama_asset','kategori_asset','ruangan_id','deskripsi','kondisi','jenis','stok'
     ];
 
     public function ruangan(): BelongsTo

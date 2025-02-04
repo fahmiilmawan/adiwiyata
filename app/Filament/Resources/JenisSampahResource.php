@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\JenisSampahResource\Pages;
 use App\Models\JenisSampah;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -28,15 +29,31 @@ class JenisSampahResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('nama_sampah')
+                Select::make('nama_sampah')
                     ->label('Nama Sampah')
                     ->required()
-                    ->maxLength(255),
+                    ->options([
+                        'Rongsok' => 'Rongsok',
+                        'Montasi (plastik & kertas)' => 'Montasi (plastik & kertas)',
+                        'Aqua gelas bening (tanpa label)' => 'Aqua gelas bening (tanpa label)',
+                        'Aqua botol bening (tanpa label)' => 'Aqua botol bening (tanpa label)',
+                        'Plastik bening (tanpa label)' => 'Plastik bening (tanpa label)',
+                        'Plastik berwarna (tanpa label)' => 'Plastik berwarna (tanpa label)',
+                        'Kertas' => 'Kertas',
+                        'Kaset VCD/DVD' => 'Kaset VCD/DVD',
+                    ]),
 
-                TextInput::make('jenis_sampah')
+                Select::make('jenis_sampah')
                     ->label('Jenis Sampah')
                     ->required()
-                    ->maxLength(255),
+                    ->options([
+                        'Sampah Campuran' => 'Sampah Campuran',
+                        'Plastik' => 'Plastik',
+                        'Campuran' => 'Campuran',
+                        'Botol' => 'Botol',
+                        'Kertas' => 'Kertas',
+                        'CD/DVD' => 'CD/DVD',
+                    ]),
 
                 TextInput::make('harga')
                     ->label('Harga (Rp)/Kg')

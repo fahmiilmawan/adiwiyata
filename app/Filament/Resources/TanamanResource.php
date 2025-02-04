@@ -37,13 +37,26 @@ class TanamanResource extends Resource
                 Forms\Components\TextInput::make('nama_tanaman')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('nama_latin')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\FileUpload::make('gambar')
+                    ->image()
+                    ->disk('local')
+                    ->directory('uploads/images')
+                    ->visibility('local')
+                    ->required(),
                 Forms\Components\Select::make('kategori_tanaman')
                     ->options([
                         'toga' => 'Toga',
                         'konsumsi' => 'Konsumsi',
                         'hias' => 'Hias',
-                    ]),
-                Forms\Components\Textarea::make('deskripsi')
+                    ])
+                    ->required(),
+                Forms\Components\Select::make('taman_id')
+                    ->relationship('taman','nama_taman')
+                    ->required(),
+                Forms\Components\RichEditor::make('deskripsi')
                     ->required()
                     ->columnSpanFull(),
 
@@ -59,7 +72,12 @@ class TanamanResource extends Resource
                 Tables\Columns\TextColumn::make('kategori_tanaman')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('deskripsi')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable()
+                    ,
+                Tables\Columns\ViewColumn::make('qr_code')
+                    ->label('QR Code')
+                    ->view('components.qr-code'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -68,6 +86,7 @@ class TanamanResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
             ])
             ->filters([
                 //

@@ -19,6 +19,10 @@ class ListTanamen extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+
+            Actions\CreateAction::make('Print QR Code')
+            ->label('Print QR Code')
+            ->url(url(route('print.qr-code'))),
         ];
 
 

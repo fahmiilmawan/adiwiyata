@@ -97,7 +97,7 @@
     </section>
 
     <div class="bg-quaternary">
-
+        <h1 class="text-xl lg:text-3xl text-center pt-5">Koleksi Tanaman</h1>
         {{-- Tanaman  --}}
         <section class="">
             <div class="p-2 lg:p-4">
@@ -123,7 +123,23 @@
                                 </div>
                             </div>
 
+                        @foreach ($tanaman as $data)
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 items-center rounded-xl">
+                            <div class="grid grid-cols-1 md:grid-cols-2 bg-primary items-center rounded-xl">
+                                <img src="{{ asset('image/pokja-1.jpg') }}" alt=""
+                                    class="w-full h-full rounded-xl">
+                                <div class="text-center p-2">
+                                    <h1 class="text-xl lg:text-2xl">{{ $data->nama_tanaman }}</h1>
+                                    <h2 class="text-base lg:text-xl">({{ $data->nama_latin }})</h2>
+                                    <h3 class="text-sm lg:text-lg">{{ $data->kategori_tanaman }}</h3>
+                                    <button
+                                        class="bg-secondary p-2 mt-2 hover:bg-yellow-500 transition-all ease-in-out duration-500 rounded">
+                                        <a href="{{ route('koleksi-detail',$data->id) }}" class="text-sm">Baca Selengkapnya</a>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
+                        @endforeach
 
                     </div>
                     <div id="modal"
