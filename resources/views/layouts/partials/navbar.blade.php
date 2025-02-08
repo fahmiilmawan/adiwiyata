@@ -374,10 +374,7 @@
                                 </a>
                             </div>
                         </div>
-                        <button
-                            class="w-full bg-secondary hover:bg-yellow-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all ease-in-out duration-500">
-                            Koleksi Tanaman
-                        </button>
+                        <a href="{{ route('koleksi') }}" class="bg-secondary hover:bg-yellow-500 block transition-all ease-in-out duration-500 text-white px-4 py-2 rounded-lg text-sm font-medium">Koleksi Tanaman</a>
                     </div>
                 </div>
             </div>

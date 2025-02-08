@@ -13,6 +13,9 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/ecde4d1cd4.js" crossorigin="anonymous"></script>
 
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- CSS Internal -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -23,6 +26,12 @@
 
         body {
             font-family: 'Poppins', Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         /* Hero Section */
@@ -89,7 +98,7 @@
     </style>
 </head>
 
-<body>
+<body class="">
     <!-- Navbar Start -->
     @include('layouts.partials.navbar')
     <!-- Navbar End -->
@@ -173,16 +182,18 @@
         <section class="about p-2 lg:p-4" id="about">
             <div class="container mx-auto p-3 lg:p-5">
                 <div class="grid lg:grid-cols-2 rounded">
-                    <div class="flex justify-center lg:justify-start">
+
+                    <div class="flex justify-center lg:justify-start" data-aos="fade-right">
                         <img src="{{ asset('image/logo-adiwiyata.png') }}" alt="" class="w-96 object-cover" />
                     </div>
+
                     <div class="text-center">
-                        <h1 class="text-xl lg:text-3xl text-primary font-semibold">
+                        <h1 class="text-xl lg:text-3xl text-primary font-semibold" data-aos="fade-up">
                             TENTANG ADIWIYATA
                         </h1>
                         <div class="bg-secondary mx-auto w-1/5 h-1"></div>
-                        <div class="mt-3">
-                            <h1 class="text-xs md:text-sm lg:text-base text-justify">
+                        <div class="mt-3" data-aos="fade-up-right">
+                            <p class="text-xs md:text-sm lg:text-base text-justify">
                                 Program Adiwiyata adalah sebuah inisiatif yang diluncurkan
                                 oleh Kementerian Lingkungan Hidup Indonesia pada tahun 2006
                                 untuk mendorong kesadaran lingkungan di sekolah-sekolah.
@@ -196,7 +207,7 @@
                                 partisipasi aktif dari seluruh warga sekolah, termasuk guru,
                                 siswa, dan staf, untuk menciptakan lingkungan yang lebih
                                 bersih, sehat, dan hijau.
-                            </h1>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -468,6 +479,13 @@
         @include('layouts.partials.footer')
         <!-- Footer End -->
     </div>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
