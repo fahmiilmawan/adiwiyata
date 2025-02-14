@@ -20,6 +20,7 @@ class ListPemasukans extends ListRecords
             Actions\CreateAction::make('Print Laporan')
             ->label('Print Laporan')
             ->url(url(route('print.laporan-pemasukan'))),
+
         ];
     }
 

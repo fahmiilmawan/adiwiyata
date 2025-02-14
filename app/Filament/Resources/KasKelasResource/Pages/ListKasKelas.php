@@ -17,8 +17,7 @@ class ListKasKelas extends ListRecords
         return [
             Actions\CreateAction::make(),
             Actions\CreateAction::make('Print kas Kelas')
-            ->label('Print kas Kelas')
-            ->url(url(route('print.laporan-KasKelas'))),
+            ->label('Print kas Kelas'),
         ];
     }
 }

@@ -4,10 +4,12 @@ namespace App\Filament\Resources\LaporanPengeluaranResource\Pages;
 
 use App\Filament\Resources\LaporanPengeluaranResource;
 use Filament\Actions;
+use Filament\Notifications\Collection;
 use Filament\Resources\Pages\ListRecords;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Response;
 use App\Models\LaporanPengeluaran;
+
 
 class ListLaporanPengeluarans extends ListRecords
 {
@@ -17,16 +19,14 @@ class ListLaporanPengeluarans extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
-
-            Actions\Action::make('print_pdf')
-                ->label('Print PDF')
-                ->icon('heroicon-o-printer')
-                ->color('danger')
-                ->action(fn () => $this->exportPdf()) // Memanggil fungsi exportPdf()
-                ->requiresConfirmation()
-                ->modalHeading('Cetak Laporan Pengeluaran')
-                ->modalDescription('Apakah Anda yakin ingin mencetak semua laporan pengeluaran ke dalam PDF?')
-                ->modalSubmitActionLabel('Cetak'),
+            Actions\CreateAction::make('Print PDF')
+            ->label('Print PDF')
+            ->icon('heroicon-o-printer')
+            ->action(fn (Collection $records) => static::exportPdf($records))
+            ->requiresConfirmation()
+            ->modalHeading('Print Laporan Pengeluaran')
+            ->modalDescription('Apakah Anda yakin ingin mencetak laporan ini ke dalam PDF?')
+            ->modalSubmitActionLabel('Cetak'),
         ];
     }
 
