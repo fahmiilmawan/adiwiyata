@@ -13,6 +13,9 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/ecde4d1cd4.js" crossorigin="anonymous"></script>
 
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- CSS Internal -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -107,57 +110,41 @@
                         <div
                             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 items-center rounded-xl">
 
-                            <div class="bg-white shadow-md rounded-xl">
-                                <img src="{{ asset('image/koleksi-tanaman/stevia.jpg') }}" alt=""
-                                    class="object-cover rounded-xl">
-                                <div class="text-center p-5">
-                                    <h1 class="font-bold">Stevia</h1>
-                                    <h2 class="font-semibold">(Stevia Rebaudiana)</h2>
-                                    <h3 class=""></h3>
-                                    <div class="text-end mt-14">
-                                        <button class="bg-primary hover:bg-green-900 text-white p-2 rounded"
-                                            onclick="openModal('produk-1')">
-                                            View More
-                                        </button>
+                            @foreach ($tanaman as $data)
+                                <div class="bg-white shadow-md rounded-xl">
+                                    <img src="{{ asset('image/koleksi-tanaman/stevia.jpg') }}" alt=""
+                                        class="object-cover rounded-xl">
+                                    <div class="text-center p-5">
+                                        <h1 class="font-bold">{{ $data->nama_tanaman }}</h1>
+                                        <h2 class="font-semibold">({{ $data->nama_latin }})</h2>
+                                        <h3 class="">{{ $data->kategori_tanaman }}</h3>
+                                        <div class="text-end mt-8">
+                                            <a href="{{ route('koleksi-detail', $data->slug) }}"
+                                                class="bg-secondary hover:bg-yellow-500 p-2 transition-all ease-in-out duration-500 rounded text-sm">
+                                                Baca Selengkapnya
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
 
-                        @foreach ($tanaman as $data)
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 items-center rounded-xl">
-                            <div class="grid grid-cols-1 md:grid-cols-2 bg-primary items-center rounded-xl">
-                                <img src="{{ asset('image/pokja-1.jpg') }}" alt=""
-                                    class="w-full h-full rounded-xl">
-                                <div class="text-center p-2">
-                                    <h1 class="text-xl lg:text-2xl">{{ $data->nama_tanaman }}</h1>
-                                    <h2 class="text-base lg:text-xl">({{ $data->nama_latin }})</h2>
-                                    <h3 class="text-sm lg:text-lg">{{ $data->kategori_tanaman }}</h3>
-                                    <button
-                                        class="bg-secondary p-2 mt-2 hover:bg-yellow-500 transition-all ease-in-out duration-500 rounded">
-                                        <a href="{{ route('koleksi-detail',$data->id) }}" class="text-sm">Baca Selengkapnya</a>
+                        </div>
+                        <div id="modal"
+                            class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center z-50">
+                            <div class="bg-white p-6 rounded-lg shadow-xl max-w-3xl w-full mx-4 modal-content">
+                                <div id="modal-content" class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                                    <!-- Konten akan diisi melalui JavaScript -->
+                                </div>
+                                <div class="flex justify-self-end">
+                                    <button onclick="closeModal()"
+                                        class="bg-primary hover:bg-green-900 text-white p-2 rounded">
+                                        Tutup
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
-
-                    </div>
-                    <div id="modal"
-                        class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center z-50">
-                        <div class="bg-white p-6 rounded-lg shadow-xl max-w-3xl w-full mx-4 modal-content">
-                            <div id="modal-content" class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-                                <!-- Konten akan diisi melalui JavaScript -->
-                            </div>
-                            <div class="flex justify-self-end">
-                                <button onclick="closeModal()"
-                                    class="bg-primary hover:bg-green-900 text-white p-2 rounded">
-                                    Tutup
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <!-- Footer -->
@@ -213,6 +200,13 @@
                 closeModal();
             }
         }
+    </script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
     </script>
 </body>
 
