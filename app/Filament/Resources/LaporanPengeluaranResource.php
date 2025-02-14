@@ -100,11 +100,10 @@ class LaporanPengeluaranResource extends Resource
                     ->modalSubmitActionLabel('Cetak'),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make()
-                    ->actions([
-                        Tables\Actions\DeleteBulkAction::make(),
-                    ]),
-                ]);
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
         }
 
 
