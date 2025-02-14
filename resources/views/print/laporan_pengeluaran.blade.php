@@ -16,6 +16,7 @@
     <table>
         <thead>
             <tr>
+                <th>No</th>
                 <th>Jenis Pengeluaran</th>
                 <th>Jumlah</th>
                 <th>Harga</th>
@@ -24,8 +25,12 @@
             </tr>
         </thead>
         <tbody>
+            @php
+                $no = 2;
+            @endphp
             @foreach ($records as $record)
                 <tr>
+                    <td>{{ $no++ }}</td>
                     <td>{{ $record->jenis_pengeluaran }}</td>
                     <td>{{ $record->jumlah }}</td>
                     <td>{{ number_format($record->harga, 0, ',', '.') }}</td>

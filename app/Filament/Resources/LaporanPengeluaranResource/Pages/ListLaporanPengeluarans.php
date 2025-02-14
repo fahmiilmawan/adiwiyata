@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\LaporanPengeluaranResource\Pages;
 
 use App\Filament\Resources\LaporanPengeluaranResource;
+use App\Filament\Widgets\SaldoWidget;
 use Filament\Actions;
 use Filament\Notifications\Collection;
 use Filament\Resources\Pages\ListRecords;
@@ -15,11 +16,18 @@ class ListLaporanPengeluarans extends ListRecords
 {
     protected static string $resource = LaporanPengeluaranResource::class;
 
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            SaldoWidget::class,
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [
             Actions\CreateAction::make(),
-            Actions\CreateAction::make('Print PDF')
+            Actions\Action::make('Print PDF')
             ->label('Print PDF')
             ->icon('heroicon-o-printer')
             ->action(fn (Collection $records) => static::exportPdf($records))
@@ -34,9 +42,6 @@ class ListLaporanPengeluarans extends ListRecords
     {
         $records = LaporanPengeluaran::all();
 
-        if ($records->isEmpty()) {
-            return back()->with('error', 'Tidak ada data untuk dicetak.');
-        }
 
         $pdf = Pdf::loadView('print.laporan_pengeluaran', compact('records'));
 

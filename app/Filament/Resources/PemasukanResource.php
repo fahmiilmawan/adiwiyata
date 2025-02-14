@@ -4,10 +4,15 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PemasukanResource\Pages;
 use App\Filament\Resources\PemasukanResource\RelationManagers;
+use App\Filament\Resources\PemasukanResource\RelationManagers\SaldoRelationManager;
+use App\Filament\Resources\PemasukanResource\Widgets\SaldoWidget;
+use App\Filament\Resources\SaldoResource\RelationManagers\PemasukanRelationManager;
 use App\Models\Pemasukan;
+use App\Models\Saldo;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -20,7 +25,7 @@ class PemasukanResource extends Resource
 
     protected static ?string $navigationGroup = 'Kas';
 
-    protected static ?string $navigationLabel = 'Pemasukan';
+    protected static ?string $navigationLabel = 'Laporan Pemasukan';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -117,6 +122,8 @@ class PemasukanResource extends Resource
             //
         ];
     }
+
+
 
     public static function getPages(): array
     {

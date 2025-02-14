@@ -18,7 +18,7 @@ class KasKelasResource extends Resource
     protected static ?string $model = KasKelas::class;
     protected static ?string $navigationGroup = 'Kas';
 
-    protected static ?string $navigationLabel = 'Kas Kelas';
+    protected static ?string $navigationLabel = 'Laporan Kas Kelas';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -27,7 +27,7 @@ class KasKelasResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Select::make('kelas_id')
-                    ->relationship('kelas', 'id')
+                    ->relationship('kelas', 'nama_kelas')
                     ->required(),
                 Forms\Components\TextInput::make('penarikan')
                     ->required()

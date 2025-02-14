@@ -13,4 +13,9 @@ class Pemasukan extends Model
         'harga',
         'total'
     ];
+
+    public function saldo()
+    {
+        return $this->belongsTo(Saldo::class);
+    }
 }

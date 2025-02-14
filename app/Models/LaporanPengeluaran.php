@@ -8,4 +8,9 @@ class LaporanPengeluaran extends Model
 {
     protected $table= 'laporan_pengeluaran';
     protected $fillable = ['jenis_pengeluaran','deskripsi','jumlah','harga','total'];
+
+    public function saldo()
+    {
+        return $this->belongsTo(Saldo::class);
+    }
 }

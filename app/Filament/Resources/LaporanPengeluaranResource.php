@@ -91,14 +91,6 @@ class LaporanPengeluaranResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\Action::make('print_pdf')
-                    ->label('Print PDF')
-                    ->icon('heroicon-o-printer')
-                    ->action(fn (Collection $records) => static::exportPdf($records))
-                    ->requiresConfirmation()
-                    ->modalHeading('Print Laporan Pengeluaran')
-                    ->modalDescription('Apakah Anda yakin ingin mencetak laporan ini ke dalam PDF?')
-                    ->modalSubmitActionLabel('Cetak'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -106,7 +98,7 @@ class LaporanPengeluaranResource extends Resource
                 ]),
             ]);
         }
-       
+
 
     public static function getRelations(): array
     {
