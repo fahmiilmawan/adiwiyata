@@ -106,25 +106,7 @@ class LaporanPengeluaranResource extends Resource
                 ]),
             ]);
         }
-        public static function exportPdf()
-        {
-            // Ambil semua data dari model
-            $records = LaporanPengeluaran::all();
-
-            if ($records->isEmpty()) {
-                return back()->with('error', 'Tidak ada data untuk dicetak.');
-            }
-
-            // Buat PDF dari tampilan Blade
-            $pdf = Pdf::loadView('print.laporan_pengeluaran', compact('records'));
-
-            // Download PDF
-            return response()->streamDownload(
-                fn () => print($pdf->output()),
-                'laporan_pengeluaran.pdf'
-            );
-        }
-
+       
 
     public static function getRelations(): array
     {
