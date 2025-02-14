@@ -23,7 +23,7 @@ class LaporanPemasukanResource extends Resource
 
     protected static ?string $navigationGroup = 'Laporan';
 
-    protected static ?string $navigationLabel = 'Laporan Pemasukan';
+    protected static ?string $navigationLabel = 'Laporan Pemasukan Kelas';
 
     protected static ?int $navigationSort = 5;
 

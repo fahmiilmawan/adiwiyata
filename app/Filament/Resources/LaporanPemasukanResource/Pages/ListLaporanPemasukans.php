@@ -14,7 +14,7 @@ class ListLaporanPemasukans extends ListRecords
 
     public function getHeading(): string
     {
-        return 'Laporan Pemasukan';
+        return 'Laporan Pemasukan Kelas';
     }
 
     // protected function getHeaderWidgets(): array
