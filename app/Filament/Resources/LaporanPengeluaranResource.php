@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\LaporanPengeluaranResource\Pages;
 use App\Filament\Resources\LaporanPengeluaranResource\RelationManagers;
 use App\Models\LaporanPengeluaran;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -104,6 +105,24 @@ class LaporanPengeluaranResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
+        }
+        public static function exportPdf()
+        {
+            // Ambil semua data dari model
+            $records = LaporanPengeluaran::all();
+
+            if ($records->isEmpty()) {
+                return back()->with('error', 'Tidak ada data untuk dicetak.');
+            }
+
+            // Buat PDF dari tampilan Blade
+            $pdf = Pdf::loadView('print.laporan_pengeluaran', compact('records'));
+
+            // Download PDF
+            return response()->streamDownload(
+                fn () => print($pdf->output()),
+                'laporan_pengeluaran.pdf'
+            );
         }
 
 
