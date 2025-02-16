@@ -57,21 +57,21 @@ class PemasukanResource extends Resource
                     ->required()
                     ->maxLength(255),
 
+                    TextInput::make('harga')
+                        ->label('Harga')
+                        ->required()
+                        ->numeric(),
                 TextInput::make('jumlah')
                     ->label('Jumlah')
                     ->numeric()
-                    ->required(),
-
-                TextInput::make('harga')
-                    ->label('Harga')
-                    ->required()
-                    ->numeric()
                     ->debounce(600)
+                    ->required()
                     ->dehydrated()
                     ->reactive()
-                ->afterStateUpdated(function (callable $set, $get) {
-                    self::hitungTotalHarga($set, $get);
-                }),
+                    ->afterStateUpdated(function (callable $set, $get) {
+                        self::hitungTotalHarga($set, $get);
+                    }),
+
 
                 TextInput::make('total')
                     ->label('Total Harga')

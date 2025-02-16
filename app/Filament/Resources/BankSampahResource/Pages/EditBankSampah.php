@@ -14,22 +14,35 @@ class EditBankSampah extends EditRecord
 {
     protected static string $resource = BankSampahResource::class;
 
-    //Customizing handle record before update
     protected function handleRecordUpdate(Model $record, array $data): Model
     {
+        // Hitung selisih perubahan total harga
+        $selisihTotal = $data['total_harga'] - $record->total_harga;
+
+        // Update data bank sampah
+        $record->update($data);
+
+        // Update pemasukan berdasarkan transaksi
         $pemasukan = Pemasukan::where('transaction_id', $record->transaction_id)->first();
-        $pemasukan->jumlah = $data['jumlah'];
-        $pemasukan->total = $data['total'];
-        $pemasukan->save();
+        if ($pemasukan) {
+            $pemasukan->jumlah = $data['jumlah'];
+            $pemasukan->total = $data['total_harga'];
+            $pemasukan->save();
+        }
 
+        // Update kas kelas dengan menyesuaikan selisih total harga
         $kasKelas = KasKelas::where('transaction_id', $record->transaction_id)->first();
-        $kasKelas->saldo = $data['total'];
-        $kasKelas->save();
+        if ($kasKelas) {
+            $kasKelas->saldo += $selisihTotal; // Tambahkan/dikurangi saldo berdasarkan perubahan
+            $kasKelas->save();
+        }
 
+        // Update saldo keseluruhan
         $saldoTerakhir = Saldo::latest()->first();
-        $saldoBaru = ($saldoTerakhir?->saldo ?? 0) - $data['total'];
-        $saldoTerakhir->saldo = $saldoBaru;
-        $saldoTerakhir->save();
+        if ($saldoTerakhir) {
+            $saldoTerakhir->saldo += $selisihTotal; // Perubahan saldo sesuai selisih
+            $saldoTerakhir->save();
+        }
 
         return $record;
     }
@@ -40,5 +53,4 @@ class EditBankSampah extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
-
 }

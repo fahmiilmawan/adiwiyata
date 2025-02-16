@@ -31,9 +31,8 @@ class CreateBankSampah extends CreateRecord
                 'saldo' => $bankSampah->total_harga,
                 'transaction_id' => $transactionID,
             ]);
-            $kasKelas->save();
 
-        } else {
+        } else{
             $kasKelas->saldo += $bankSampah->total_harga;
             $kasKelas->save();
         }
@@ -49,10 +48,15 @@ class CreateBankSampah extends CreateRecord
             ]);
             $pemasukan->save();
 
+        $saldo = Saldo::latest()->first();
+        if (!$saldo) {
             $saldo = Saldo::create([
                 'saldo' => $bankSampah->total_harga,
             ]);
+        } else {
+            $saldo->saldo += $bankSampah->total_harga;
             $saldo->save();
+        }
 
         return $bankSampah;
     }
