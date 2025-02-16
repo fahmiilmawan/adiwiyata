@@ -27,6 +27,8 @@ class PemasukanResource extends Resource
 
     protected static ?string $navigationLabel = 'Laporan Pemasukan';
 
+    protected static ?int $navigationSort = 4;
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     private static function hitungTotalHarga($set, $get)
@@ -64,6 +66,8 @@ class PemasukanResource extends Resource
                     ->label('Harga')
                     ->required()
                     ->numeric()
+                    ->debounce(600)
+                    ->dehydrated()
                     ->reactive()
                 ->afterStateUpdated(function (callable $set, $get) {
                     self::hitungTotalHarga($set, $get);

@@ -16,17 +16,13 @@ class CreateLaporanPengeluaran extends CreateRecord
 
         $pengeluaran = static::getModel()::create($data);
 
-
         $saldoTerakhir = Saldo::latest()->first();
-
 
         $saldoBaru = ($saldoTerakhir?->saldo ?? 0) - $pengeluaran->total;
 
-        Saldo::query()->delete();
+        $saldoTerakhir->saldo = $saldoBaru;
 
-        Saldo::create([
-            'saldo' => $saldoBaru,
-        ]);
+        $saldoTerakhir->save();
 
         return $pengeluaran;
     }

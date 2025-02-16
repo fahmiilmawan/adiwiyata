@@ -6,6 +6,7 @@ use App\Filament\Resources\KasKelasResource\Pages;
 use App\Filament\Resources\KasKelasResource\RelationManagers;
 use App\Models\KasKelas;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -16,9 +17,12 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class KasKelasResource extends Resource
 {
     protected static ?string $model = KasKelas::class;
+
     protected static ?string $navigationGroup = 'Kas';
 
     protected static ?string $navigationLabel = 'Laporan Kas Kelas';
+
+    protected static ?int $navigationSort = 4;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -26,12 +30,9 @@ class KasKelasResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('kelas_id')
+                Select::make('kelas_id')
                     ->relationship('kelas', 'nama_kelas')
                     ->required(),
-                Forms\Components\TextInput::make('penarikan')
-                    ->required()
-                    ->numeric(),
                 Forms\Components\TextInput::make('saldo')
                     ->required()
                     ->numeric(),
@@ -42,17 +43,16 @@ class KasKelasResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('kelas.id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('penarikan')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('kelas.nama_kelas')
+                    ->label('Kelas')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('saldo')
+                    ->label('Saldo')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
+                    ->label('Tanggal')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')

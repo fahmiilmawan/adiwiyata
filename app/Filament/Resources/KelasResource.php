@@ -19,6 +19,10 @@ class KelasResource extends Resource
 
     protected static ?string $navigationGroup = 'Master Data';
 
+    protected static ?string $navigationLabel = 'Kelas';
+
+    protected static ?int $navigationSort = 1;
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -27,7 +31,7 @@ class KelasResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nama_kelas')
                     ->required()
-                    ->maxLength(255)->columnSpanFull(),
+                    ->maxLength(255),
                 Forms\Components\Textarea::make('deskripsi')
                     ->required()
                     ->columnSpanFull(),
@@ -39,8 +43,6 @@ class KelasResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama_kelas')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('deskripsi')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

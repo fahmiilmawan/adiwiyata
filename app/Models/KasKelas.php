@@ -3,16 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class KasKelas extends Model
 {
-    protected $fillable=[
-'kelas_id',
-'penarikan',
-'saldo'
+    protected $fillable = [
+        'kelas_id',
+        'saldo',
+        'transaction_id'
     ];
-    public function kelas(): BelongsTo
+
+    public function kelas()
     {
         return $this->belongsTo(Kelas::class);
     }

@@ -26,8 +26,8 @@ class BankSampahResource extends Resource
     protected static ?string $navigationGroup = 'Bank';
 
     protected static ?string $navigationLabel = 'Bank Sampah';
+    protected static ?int $navigationSort = 3;
 
-    protected static ?int $navigationSort = 2;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -91,6 +91,7 @@ class BankSampahResource extends Resource
                 ->numeric()
                 ->required()
                 ->reactive()
+                ->debounce(600)
                 ->afterStateUpdated(function (callable $set, $get) {
                     self::hitungTotalHarga($set, $get);
                 })->columnSpanFull(),

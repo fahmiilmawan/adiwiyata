@@ -11,7 +11,8 @@ class Pemasukan extends Model
         'deskripsi',
         'jumlah',
         'harga',
-        'total'
+        'total',
+        'transaction_id'
     ];
 
     public function saldo()

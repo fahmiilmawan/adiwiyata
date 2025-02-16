@@ -20,6 +20,8 @@ class TamanResource extends Resource
     protected static ?string $navigationGroup = 'Master Data';
 
     protected static ?string $slug = 'taman';
+    
+    protected static ?int $navigationSort = 1;
 
     protected static ?string $navigationLabel = 'Taman';
 

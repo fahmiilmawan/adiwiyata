@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class BankSampah extends Model
 {
     protected $fillable = [
-        'user_id','jenis_sampah_id','kelas_id','jumlah','harga','total_harga'
+        'user_id','jenis_sampah_id','kelas_id','jumlah','harga','total_harga','transaction_id'
     ];
 
 
@@ -23,5 +23,9 @@ class BankSampah extends Model
     public function jenis_sampah()
     {
         return $this->belongsTo(JenisSampah::class);
+    }
+    public function kasKelas()
+    {
+        return $this->belongsTo(KasKelas::class);
     }
 }

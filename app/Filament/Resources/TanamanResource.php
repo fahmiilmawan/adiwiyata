@@ -24,6 +24,8 @@ class TanamanResource extends Resource
 
     protected static ?string $navigationLabel = 'Tanaman';
 
+    protected static ?int $navigationSort = 1;
+
     protected ?string $heading = 'Tanaman';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

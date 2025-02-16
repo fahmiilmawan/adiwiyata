@@ -20,6 +20,8 @@ class JenisSampahResource extends Resource
     protected static ?string $model = JenisSampah::class;
 
     protected static ?string $navigationGroup = 'Master Data';
+    
+    protected static ?int $navigationSort = 1;
 
     protected static ?string $navigationLabel = 'Jenis Sampah';
 
