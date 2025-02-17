@@ -26,6 +26,12 @@ class KasKelasResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static function formatRupiah($angka)
+    {
+        return 'Rp ' . number_format($angka, 0, ',', '.');
+
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -35,7 +41,8 @@ class KasKelasResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('saldo')
                     ->required()
-                    ->numeric(),
+                    ->numeric()
+                    ->formatStateUsing(fn ($state) => self::formatRupiah($state)),
             ]);
     }
 
@@ -49,6 +56,8 @@ class KasKelasResource extends Resource
                 Tables\Columns\TextColumn::make('saldo')
                     ->label('Saldo')
                     ->numeric()
+                    ->formatStateUsing(fn ($state) => self::formatRupiah($state))
+
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

@@ -28,7 +28,6 @@ class BankSampahResource extends Resource
     protected static ?string $navigationLabel = 'Bank Sampah';
     protected static ?int $navigationSort = 3;
 
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static function formatRupiah($angka)
@@ -62,7 +61,8 @@ class BankSampahResource extends Resource
 
             Select::make('kelas_id')
                 ->relationship(name: 'kelas', titleAttribute: 'nama_kelas')
-                ->columnSpanFull(),
+                ->columnSpanFull()
+                ->required(),
 
             Select::make('jenis_sampah_id')
                 ->label('Jenis Sampah')
@@ -126,6 +126,7 @@ class BankSampahResource extends Resource
                 TextColumn::make('harga')
                     ->label('Harga (per kg)')
                     ->numeric()
+                    ->formatStateUsing(fn ($state) => 'Rp ' . number_format($state, 0, ',', '.'))
                     ->sortable(),
                 TextColumn::make('total_harga')
                     ->label('Total Harga')

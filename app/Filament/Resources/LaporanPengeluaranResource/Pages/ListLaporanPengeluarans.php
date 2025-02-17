@@ -26,15 +26,16 @@ class ListLaporanPengeluarans extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+                ->label('Tambah Pengeluaran'),
             Actions\Action::make('Print PDF')
-            ->label('Print PDF')
-            ->icon('heroicon-o-printer')
-            ->action(fn (Collection $records) => static::exportPdf($records))
-            ->requiresConfirmation()
-            ->modalHeading('Print Laporan Pengeluaran')
-            ->modalDescription('Apakah Anda yakin ingin mencetak laporan ini ke dalam PDF?')
-            ->modalSubmitActionLabel('Cetak'),
+                ->label('Print PDF')
+                ->icon('heroicon-o-printer')
+                ->action(fn (Collection $records) => static::exportPdf($records))
+                ->requiresConfirmation()
+                ->modalHeading('Print Laporan Pengeluaran')
+                ->modalDescription('Apakah Anda yakin ingin mencetak laporan ini ke dalam PDF?')
+                ->modalSubmitActionLabel('Cetak'),
         ];
     }
 

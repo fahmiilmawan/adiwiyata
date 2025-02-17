@@ -23,4 +23,9 @@ class Kelas extends Model
     {
         return $this->belongsTo(KasKelas::class);
     }
+
+    public function tarikSaldo(): HasMany
+    {
+        return $this->hasMany(TarikSaldo::class);
+    }
 }

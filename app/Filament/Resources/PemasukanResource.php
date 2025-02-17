@@ -31,6 +31,12 @@ class PemasukanResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static function formatRupiah($angka)
+    {
+        return 'Rp ' . number_format($angka, 0, ',', '.');
+
+    }
+
     private static function hitungTotalHarga($set, $get)
     {
         $jumlah = $get('jumlah');
@@ -39,10 +45,10 @@ class PemasukanResource extends Resource
         if (is_numeric($jumlah) && is_numeric($harga) && $jumlah > 0 && $harga > 0) {
             $total = $jumlah * $harga;
             $set('total', $total);
-            $set('total_formatted', 'Rp ' . number_format($total, 0, ',', '.')); // Format Rupiah
+            $set('total_formatted', self::formatRupiah($total)); // Format Rupiah
         } else {
             $set('total', 0);
-            $set('total_formatted', 'Rp 0');
+            $set('total_formatted', self::formatRupiah(0)); // Format Rupiah
         }
     }
 
