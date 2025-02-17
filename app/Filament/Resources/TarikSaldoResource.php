@@ -64,11 +64,11 @@ class TarikSaldoResource extends Resource
                     ->label('Kelas')
                     ->searchable()
                     ->sortable(),
-                    Tables\Columns\TextColumn::make('kasKelas.saldo')
-                    ->label('Saldo Saat ini ')
+                    Tables\Columns\TextColumn::make('debit')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('debit')
+                    Tables\Columns\TextColumn::make('kasKelas.saldo')
+                    ->label('Saldo Saat ini')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

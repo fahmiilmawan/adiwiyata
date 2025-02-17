@@ -54,10 +54,10 @@ class CreateTarikSaldo extends CreateRecord
         $kelas = Kelas::where('id', $kasKelas->kelas_id)->first();
 
         LaporanPengeluaran::create([
-            'jenis_pengeluaran' => 'Tarik Saldo',
+            'jenis_pengeluaran' => 'Tarik Saldo Oleh Kelas ' . ($kelas->nama_kelas ?? 'Tidak Diketahui'),
             'deskripsi' => 'Pengeluaran Tarik Saldo oleh kelas ' . ($kelas->nama_kelas ?? 'Tidak Diketahui'),
-            'jumlah' => 1,
-            'harga' => $data['debit'], 
+            'jumlah' => 1, 
+            'harga' => $data['debit'],
             'total' => $data['debit'],
         ]);
 
