@@ -24,34 +24,17 @@
             scroll-behavior: smooth;
         }
 
+        * {
+            font-family: 'Poppins';
+        }
+
+        html,
         body {
-            font-family: 'Poppins', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
-        /* Style untuk mengunci scroll body */
-        body.modal-open {
-            overflow: hidden;
-        }
-
-        /* Style untuk modal yang bisa di-scroll jika kontennya panjang */
-        .modal-content {
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        /* Hero Section */
-        .slide {
-            background-image: url('{{ asset('image/slider-1.jpg') }}');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Scrolling */
-        #tanaman-hias,
-        #tanaman-obat-keluarga,
-        #tanaman-konsumsi {
-            scroll-margin-top: 70px;
-        }
+        /* Scroll Behavior */
 
         /* Scrolling Bar */
         ::-webkit-scrollbar {
@@ -65,44 +48,18 @@
     <!-- Navigasi Bar -->
     @include('layouts.partials.navbar')
 
-    <section class="hero-section bg-green-500/15" id="home">
-        <div class="relative w-full h-[100vh] overflow-hidden">
-
-            <!-- Logo and Text Container (Fixed Position) -->
-            <div class="absolute w-full h-full flex flex-col items-center justify-center z-10 p-2 lg:p-0">
-                <div class="container mx-auto">
-                    <div class="mt-0">
-
-                        <!-- Logo -->
-                        <img src="{{ asset('image/Adiwiyata.png') }}" alt=""
-                            class="sm:w-[90%] md:w-[80%] lg:w-[55%] justify-self-center" />
-
-                        <!-- Text -->
-                        <div class="text-center text-white mt-5">
-                            <h1 class="text-base sm:text-2xl md:text-4xl font-bold">
-                                KOLEKSI TANAMAN - ADIWIYATA
-                            </h1>
-                            <h1 class="text-base sm:text-2xl md:text-4xl font-bold">
-                                SMK TARUNA HARAPAN 1 CIPATAT
-                            </h1>
-                        </div>
-                    </div>
-
+    <div class="bg-quaternary">
+        <div class="relative top-16 bg-primary container mx-auto px-2 lg:px-4">
+            <div class="px-3 lg:px-5">
+                <div class="flex text-white p-2 gap-5 items-center">
+                    <a href="{{ route('index') }}" class="fa-solid fa-arrow-left"></a>
+                    <h6 class="text-xl">Koleksi Tanaman Adiwiyata</h6>
                 </div>
             </div>
-
-            <!-- Carousel Container -->
-            <div class="carousel flex h-full inset-0 mix-blend-overlay">
-                <!-- Duplicate first slide at the end -->
-                <div class="slide min-w-full h-full"></div>
-            </div>
         </div>
-    </section>
 
-    <div class="bg-quaternary">
-        <h1 class="text-xl lg:text-3xl text-center pt-5">Koleksi Tanaman</h1>
         {{-- Tanaman  --}}
-        <section class="">
+        <section class="mt-20">
             <div class="p-2 lg:p-4">
                 <div class="container mx-auto">
                     <div class="p-3 lg:p-5">
@@ -113,35 +70,21 @@
                             @foreach ($tanaman as $data)
                                 <div class="bg-white shadow-md rounded-xl">
                                     <img src="{{ asset('image/koleksi-tanaman/stevia.jpg') }}" alt=""
-                                        class="object-cover rounded-xl">
+                                        class="object-cover h-full w-full rounded-xl">
                                     <div class="text-center p-5">
                                         <h1 class="font-bold">{{ $data->nama_tanaman }}</h1>
                                         <h2 class="font-semibold">({{ $data->nama_latin }})</h2>
                                         <h3 class="">{{ $data->kategori_tanaman }}</h3>
                                         <div class="text-end mt-8">
                                             <a href="{{ route('koleksi-detail', $data->slug) }}"
-                                                class="bg-secondary hover:bg-yellow-500 p-2 transition-all ease-in-out duration-500 rounded text-sm">
-                                                Baca Selengkapnya
+                                                class="border border-primary hover:bg-primary text-primary hover:text-white text-sm p-2 transition-all ease-in-out duration-500 rounded-full">
+                                                <i class="fa-solid fa-arrow-right"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
 
-                        </div>
-                        <div id="modal"
-                            class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center z-50">
-                            <div class="bg-white p-6 rounded-lg shadow-xl max-w-3xl w-full mx-4 modal-content">
-                                <div id="modal-content" class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-                                    <!-- Konten akan diisi melalui JavaScript -->
-                                </div>
-                                <div class="flex justify-self-end">
-                                    <button onclick="closeModal()"
-                                        class="bg-primary hover:bg-green-900 text-white p-2 rounded">
-                                        Tutup
-                                    </button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -150,57 +93,6 @@
         <!-- Footer -->
         @include('layouts.partials.footer')
     </div>
-
-    <script>
-        // Data modal
-        const modalData = {
-            'produk-1': {
-                image: `
-                   <img src="{{ asset('image/koleksi-tanaman/stevia.jpg') }}">
-                `,
-                title: 'Cocor Bebek',
-                description: `
-                    <div class="space-y-4">
-                        <p class="">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, laboriosam excepturi amet minus, laborum velit at atque beatae nisi hic dignissimos earum deserunt quibusdam aperiam asperiores? Cum odit nisi inventore.
-                        </p>
-                    </div>
-                `
-            },
-        };
-
-        const modal = document.getElementById('modal');
-        const modalContent = document.getElementById('modal-content');
-
-        function openModal(modalId) {
-            const data = modalData[modalId];
-
-            // Set konten
-            modalContent.innerHTML = `
-                ${data.image}
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold mb-1">${data.title}</h2>
-                    ${data.description}
-                </div>
-            `;
-
-            // Tampilkan modal dan kunci scroll
-            modal.classList.remove('hidden');
-            document.body.classList.add('modal-open');
-        }
-
-        function closeModal() {
-            modal.classList.add('hidden');
-            document.body.classList.remove('modal-open');
-        }
-
-        // Menutup modal ketika mengklik area di luar modal
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-    </script>
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

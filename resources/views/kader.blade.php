@@ -24,15 +24,14 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: 'Poppins', Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+        * {
+            font-family: 'Poppins';
         }
 
-        /* Hero Section */
-        .slide {
-            background-image: url("{{ asset('image/slider-1.jpg') }}");
-            background-size: cover;
-            background-position: center;
+        html,
+        body {
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         /* Scroll Behavior */
@@ -41,7 +40,7 @@
         #sanitasi-dan-kamar-mandi,
         #taman-dan-hutan-sekolah,
         #kreasi-daur-ulang-sampah {
-            scroll-margin-top: 80px;
+            scroll-margin-top: 70px;
         }
 
         /* Scrolling Bar */
@@ -53,119 +52,23 @@
 
 <body>
     <!-- Navigasi Bar -->
-    @include('layouts.partials.navbar')
+    @include('layouts.partials.navbar');
 
-    <!-- Hero Section -->
-    <section class="hero-section bg-green-500/15" id="home">
-        <div class="relative w-full h-[100vh] overflow-hidden">
+    <div class="bg-quaternary">
 
-            <!-- Logo and Text Container (Fixed Position) -->
-            <div class="absolute w-full h-full flex flex-col items-center justify-center z-10 px-2 lg:px-4">
-                <div class="container mx-auto md:mt-20">
-                    <div class="px-3 lg:px-5 lg:flex justify-items-center items-center">
-
-                        <div class="text-center lg:text-left lg:w-[50rem]">
-
-                            <!-- Logo -->
-                            <img src="{{ asset('image/Adiwiyata.png') }}" alt=""
-                                class="sm:w-[90%] md:w-[80%] lg:w-[50%] justify-self-center lg:justify-self-start" />
-
-                            <!-- Text -->
-                            <div class="text-white mt-2">
-                                <h1 class="sm:text-2xl md:text-4xl lg:text-5xl font-semibold">
-                                    KADER | ADIWIYATA
-                                </h1>
-                                <h1 class="sm:text-lg md:text-3xl lg:text-4xl font-semibold">
-                                    SMK TARUNA HARAPAN 1 CIPATAT
-                                </h1>
-                            </div>
-
-                        </div>
-
-
-                        <div class="hidden md:flex">
-                            <div class="lg:flex justify-items-center items-center gap-2 mt-5 lg:mt-0">
-                                <div class="flex lg:block gap-2 lg:gap-0">
-                                    <a href="" class="flex bg-white p-1 rounded">
-                                        <div class="relative overflow-hidden group rounded">
-                                            <img src="{{ asset('image/pokja-1.jpg') }}" alt=""
-                                                class="w-full h-32 lg:h-40 object-cover rounded">
-                                            <div
-                                                class="absolute transform translate-y-full group-hover:translate-y-0 bg-white bottom-0 w-screen transition-all ease-in-out duration-500 p-1">
-                                                <h6 class="text-xs">Kader 1</h6>
-                                                <h1 class="text-xs lg:text-base font-semibold">Tanaman & Pembibitan</h1>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="flex bg-white p-1 lg:my-2 rounded">
-                                        <div class="relative overflow-hidden group rounded">
-                                            <img src="{{ asset('image/pokja-2.jpg') }}" alt=""
-                                                class="w-full h-32 lg:h-40 object-cover rounded">
-                                            <div
-                                                class="absolute transform translate-y-full group-hover:translate-y-0 bg-white bottom-0 w-screen transition-all ease-in-out duration-500 p-1">
-                                                <h6 class="text-xs">Kader 2</h6>
-                                                <h1 class="text-xs lg:text-base font-semibold">Kompos & Bank Sampah</h1>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="flex bg-white p-1 rounded">
-                                        <div class="relative overflow-hidden group rounded">
-                                            <img src="{{ asset('image/pokja-3.jpg') }}" alt=""
-                                                class="w-full h-32 lg:h-40 object-cover rounded">
-                                            <div
-                                                class="absolute transform translate-y-full group-hover:translate-y-0 bg-white bottom-0 w-screen transition-all ease-in-out duration-500 p-1">
-                                                <h6 class="text-xs">Kader 3</h6>
-                                                <h1 class="text-xs lg:text-base font-semibold">Sanitasi & Kamar Mandi
-                                                </h1>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="flex lg:block gap-2 lg:gap-0 mt-2 lg:mt-0">
-                                    <a href="" class="flex bg-white p-1 lg:mb-2 rounded">
-                                        <div class="relative overflow-hidden group rounded">
-                                            <img src="{{ asset('image/pokja-4.jpg') }}" alt=""
-                                                class="w-full h-32 lg:h-40 object-cover rounded">
-                                            <div
-                                                class="absolute transform translate-y-full group-hover:translate-y-0 bg-white bottom-0 w-screen transition-all ease-in-out duration-500 p-1">
-                                                <h6 class="text-xs">Kader 4</h6>
-                                                <h1 class="text-xs lg:text-base font-semibold">Taman & Hutan Sekolah
-                                                </h1>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="flex bg-white p-1 rounded">
-                                        <div class="relative overflow-hidden group rounded">
-                                            <img src="{{ asset('image/pokja-5.jpg') }}" alt=""
-                                                class="w-full h-32 lg:h-40 object-cover rounded">
-                                            <div
-                                                class="absolute transform translate-y-full group-hover:translate-y-0 bg-white bottom-0 w-screen transition-all ease-in-out duration-500 p-1">
-                                                <h6 class="text-xs">Kader 5</h6>
-                                                <h1 class="text-xs lg:text-base font-semibold">Kreasi Daur Ulang Sampah
-                                                </h1>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+        <div class="relative top-10 bg-primary container mx-auto px-2 lg:px-4">
+            <div class="px-3 lg:px-5">
+                <div class="flex text-white p-2 gap-5 items-center">
+                    <a href="{{ route('index') }}" class="fa-solid fa-arrow-left"></a>
+                    <h6 class="text-xl">Kader Adiwiyata</h6>
                 </div>
             </div>
-
-            <!-- Carousel Container -->
-            <div class="carousel flex h-full inset-0 mix-blend-overlay">
-                <!-- Duplicate first slide at the end -->
-                <div class="slide min-w-full h-full"></div>
-            </div>
         </div>
-    </section>
 
-    <div class="bg-quaternary pt-4">
-        <div class="p-2 lg:p-4">
+        <div class="p-2 lg:p-4 mt-5">
             <div class="container mx-auto">
                 <div class="p-3 lg:p-5">
+
 
                     <!-- Tanaman & Pembibitan -->
                     <section class="shadow-lg p-3 rounded" id="tanaman-dan-pembibitan">

@@ -24,14 +24,15 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: 'Poppins', Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+        * {
+            font-family: 'Poppins';
         }
 
         html,
         body {
             overflow-x: hidden;
             max-width: 100%;
+
         }
 
         /* Hero Section */
@@ -69,7 +70,7 @@
             background-image: url("{{ asset('image/slider-1.jpg') }}");
         }
 
-        /* Kelompok Kerja */
+        /* Kader */
         .kader {
             background-image: url("{{ asset('image/bg-rounded.png') }}");
         }
@@ -99,13 +100,14 @@
 </head>
 
 <body class="">
+
     <!-- Navbar Start -->
     @include('layouts.partials.navbar')
     <!-- Navbar End -->
 
     <!-- Hero Start-->
     <section class="hero-section bg-green-500/15" id="home">
-        <div class="relative w-full h-[100vh] overflow-hidden">
+        <div class="relative w-full h-[100vh] bg-black/30 overflow-hidden">
 
             <!-- Logo and Text Container (Fixed Position) -->
             <div class="absolute w-full h-full flex flex-col items-center justify-center z-10 p-2 lg:p-0">
@@ -132,6 +134,7 @@
 
             <!-- Carousel Container -->
             <div class="carousel flex h-full inset-0 mix-blend-overlay">
+
                 <!-- Duplicate first slide at the end -->
                 <div class="slide min-w-full h-full"></div>
                 <div class="slide min-w-full h-full"></div>
@@ -156,13 +159,17 @@
 
             // When we reach the last slide (duplicate)
             if (currentIndex === slides.length - 1) {
+
                 // Wait for transition zto complete
                 setTimeout(() => {
+
                     // Remove transition
                     carousel.style.transition = "none";
+
                     // Reset to first slide
                     currentIndex = 0;
                     carousel.style.transform = `translateX(0)`;
+
                     // Re-enable transition after a brief moment
                     setTimeout(() => {
                         carousel.style.transition = "transform 0.5s ease-in-out";
@@ -192,8 +199,8 @@
                             TENTANG ADIWIYATA
                         </h1>
                         <div class="bg-secondary mx-auto w-1/5 h-1"></div>
-                        <div class="mt-3" data-aos="fade-up-right">
-                            <p class="text-xs md:text-sm lg:text-base text-justify">
+                        <div class="mt-3" data-aos="fade-up-left">
+                            <p class="sm:text-sm lg:text-base text-justify">
                                 Program Adiwiyata adalah sebuah inisiatif yang diluncurkan
                                 oleh Kementerian Lingkungan Hidup Indonesia pada tahun 2006
                                 untuk mendorong kesadaran lingkungan di sekolah-sekolah.
@@ -219,26 +226,26 @@
         <section class="kader text-white text-center p-2 lg:p-4 mt-10 bg-top" id="kelompok-kerja">
             <div class="container mx-auto p-3 lg:p-5">
                 <div class="mt-10">
-                    <h1 class="text-lg md:text-2xl lg:text-3xl font-semibold">
+                    <h1 class="text-lg md:text-2xl lg:text-3xl font-semibold" data-aos="fade-up-left">
                         KADER ADIWIYATA
                     </h1>
-                    <h1 class="md:text-xl lg:text-2xl font-semibold text-secondary">
+                    <h1 class="md:text-xl lg:text-2xl font-semibold text-secondary" data-aos="fade-up-right">
                         SMK TARUNA HARAPAN 1 CIPATAT
                     </h1>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 justify-items-center mt-5 gap-5">
 
                     {{-- Kader 1 --}}
-                    <div class="bg-quaternary pb-2 rounded">
+                    <div class="bg-quaternary p-3 rounded" data-aos="fade-right">
                         <img src="{{ asset('image/pokja-1.jpg') }}" alt=""
-                            class="aspect-video rounded-t h-48 w-full object-cover">
-                        <div class="mt-1 text-left px-2">
+                            class="aspect-video rounded h-48 w-full object-cover">
+                        <div class="mt-1 text-left">
                             <h6 class="text-sm text-gray-500">Kader 1</h6>
                             <h1 class="md:text-lg lg:text-xl text-gray-800 font-semibold">
                                 Tanaman & Pembibitan
                             </h1>
                             <div class="h-1 bg-primary w-full"></div>
-                            <p class="h-28 mt-2 text-sm text-gray-800 text-justify">
+                            <p class="h-28 mt-2 text-gray-800 text-justify">
                                 Kader di bidang Tanaman dan Pembibitan dalam program Adiwiyata
                                 memiliki fokus penting dalam mengelola tanaman konsumsi,
                                 tanaman obat, dan tanaman yang dibudidayakan secara
@@ -252,16 +259,16 @@
                     </div>
 
                     {{-- Kader 2 --}}
-                    <div class="bg-quaternary pb-2 rounded">
+                    <div class="bg-quaternary p-3 rounded" data-aos="fade-up">
                         <img src="{{ asset('image/pokja-2.jpg') }}" alt=""
-                            class="aspect-video rounded-t h-48 w-full object-cover">
-                        <div class="mt-1 text-left px-2">
+                            class="aspect-video rounded h-48 w-full object-cover">
+                        <div class="mt-1 text-left">
                             <h6 class="text-sm text-gray-500">Kader 2</h6>
                             <h1 class="md:text-lg lg:text-xl text-gray-800 font-semibold">
                                 Kompos & Bank Sampah
                             </h1>
                             <div class="h-1 bg-primary w-full"></div>
-                            <p class="h-28 mt-2 text-sm text-gray-800 text-justify">
+                            <p class="h-28 mt-2 text-gray-800 text-justify">
                                 Kader di bidang Kompos dan Bank Sampah dalam program Adiwiyata
                                 bertugas mengelola sampah di lingkungan sekolah dengan prinsip
                                 pemilahan dan pengolahan yang berkelanjutan.
@@ -274,16 +281,16 @@
                     </div>
 
                     {{-- Kader 3 --}}
-                    <div class="bg-quaternary pb-2 rounded">
+                    <div class="bg-quaternary p-3 rounded" data-aos="fade-left">
                         <img src="{{ asset('image/pokja-3.jpg') }}" alt=""
-                            class="aspect-video rounded-t h-48 w-full object-cover">
-                        <div class="mt-1 text-left px-2">
+                            class="aspect-video rounded h-48 w-full object-cover">
+                        <div class="mt-1 text-left">
                             <h6 class="text-sm text-gray-500">Kader 3</h6>
                             <h1 class="md:text-lg lg:text-xl text-gray-800 font-semibold">
                                 Sanitasi & Kamar Mandi
                             </h1>
                             <div class="h-1 bg-primary w-full"></div>
-                            <p class="h-28 mt-2 text-sm text-gray-800 text-justify">
+                            <p class="h-28 mt-2 text-gray-800 text-justify">
                                 Kader di bidang Sanitasi dan Kamar mandi dalam program
                                 Adiwiyata bertanggung jawab memastikan kebersihan, kerapian,
                                 dan keteraturan fasilitas sanitasi di sekolah.
@@ -296,16 +303,16 @@
                     </div>
 
                     {{-- Kader 4 --}}
-                    <div class="bg-quaternary pb-2 rounded">
+                    <div class="bg-quaternary p-3 rounded" data-aos="fade-right">
                         <img src="{{ asset('image/pokja-4.jpg') }}" alt=""
-                            class="aspect-video rounded-t h-48 w-full object-cover">
-                        <div class="mt-1 text-left px-2">
+                            class="aspect-video rounded h-48 w-full object-cover">
+                        <div class="mt-1 text-left">
                             <h6 class="text-sm text-gray-500">Kader 4</h6>
                             <h1 class="md:text-lg lg:text-xl text-gray-800 font-semibold">
                                 Taman & Hutan Sekolah
                             </h1>
                             <div class="h-1 bg-primary w-full"></div>
-                            <p class="h-28 mt-2 text-sm text-gray-800 text-justify">
+                            <p class="h-28 mt-2 text-gray-800 text-justify">
                                 Kader di bidang Taman dan Hutan Sekolah dalam program
                                 Adiwiyata memiliki peran penting dalam menjaga keindahan,
                                 kelestarian, dan fungsi edukasi dari taman sekolah.
@@ -318,16 +325,16 @@
                     </div>
 
                     {{-- Kader 5 --}}
-                    <div class="bg-quaternary pb-2 rounded">
+                    <div class="bg-quaternary p-3 rounded" data-aos="fade-up">
                         <img src="{{ asset('image/pokja-5.jpg') }}" alt=""
-                            class="aspect-video rounded-t h-48 w-full object-cover">
-                        <div class="mt-1 text-left px-2">
+                            class="aspect-video rounded h-48 w-full object-cover">
+                        <div class="mt-1 text-left">
                             <h6 class="text-sm text-gray-500">Kader 5</h6>
                             <h1 class="md:text-lg lg:text-xl text-gray-800 font-semibold">
                                 Kreasi Daur Ulang Sampah
                             </h1>
                             <div class="h-1 bg-primary w-full"></div>
-                            <p class="h-28 mt-2 text-sm text-gray-800 text-justify">
+                            <p class="h-28 mt-2 text-gray-800 text-justify">
                                 Kader di bidang Kreasi Daur Ulang Sampah dalam program
                                 Adiwiyata bertanggung jawab mengolah sampah menjadi barang
                                 yang bermanfaat dan memiliki nilai estetika.
@@ -348,14 +355,14 @@
         <section class="program-kerja p-2 lg:p-4" id="program-kerja">
             <div class="container mx-auto p-3 lg:p-5">
                 <div class="text-center lg:text-left">
-                    <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold text-primary">
+                    <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold text-primary" data-aos="fade-up-right">
                         PROGRAM KERJA
                     </h1>
                     <div class="">
                         <div class="h-1 bg-secondary mx-auto lg:mx-0 w-1/5"></div>
                     </div>
                 </div>
-                <div class="snap-mandatory overflow-x-scroll flex mt-10 rounded">
+                <div class="snap-mandatory overflow-x-scroll flex mt-10 rounded" data-aos="fade-left">
                     <div class="shrink-0 flex gap-5">
 
                         {{-- Program Kerja => Pengolahan Sampah Organik --}}
@@ -368,19 +375,19 @@
                                     </h1>
                                 </div>
                                 <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
-                                <p class="h-32 text-sm lg:text-base text-white text-justify mt-2">
+                                <p class="h-32 text-white text-justify mt-2">
                                     Program ini bertujuan untuk mengelola sampah organik agar dapat dimanfaatkan
                                     kembali dan mengurangi limbah yang terbuang. Kegiatan meliputi: Kompos, Budidaya
                                     Maggot, Eco Enzym, Mikroorganisme Lokal, Air Lindi, Eco Derma, dan Dekomposter.
                                 </p>
                                 <a href="{{ route('program-kerja') }}#pengolahan-sampah-organik"
-                                    class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
+                                    class="bg-secondary hover:bg-[#95822c] text-white transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
                                     BACA SELENGKAPNYA
                                 </a>
                             </div>
                         </div>
 
-                        {{-- Program Kerja =>  Pengolahan Sampah Anorganik --}}
+                        {{-- Program Kerja => Pengolahan Sampah Anorganik --}}
                         <div class="flex bg-primary p-5 rounded w-[27rem]">
                             <div class="justify-items-center">
                                 <div class="flex gap-2 items-center">
@@ -390,13 +397,13 @@
                                     </h1>
                                 </div>
                                 <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
-                                <p class="h-32 text-sm lg:text-base text-white text-justify mt-2">
+                                <p class="h-32 text-white text-justify mt-2">
                                     Sekolah menerapkan sistem Bank Sampah yang mengajak siswa dan guru memilah
                                     sampah anorganik seperti plastik, kertas, dan logam untuk didaur ulang atau
                                     dijual. Program ini menanamkan kebiasaan memilah sampah sejak dini.
                                 </p>
                                 <a href="{{ route('program-kerja') }}#pengolahan-sampah-anorganik"
-                                    class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
+                                    class="bg-secondary hover:bg-[#95822c] text-white transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
                                     BACA SELENGKAPNYA
                                 </a>
                             </div>
@@ -412,13 +419,13 @@
                                     </h1>
                                 </div>
                                 <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
-                                <p class="h-32 text-sm lg:text-base text-white text-justify mt-2">
+                                <p class="h-32 text-white text-justify mt-2">
                                     Program ini fokus pada penghematan dan pemanfaatan air secara berkelanjutan,
                                     khususnya dari limbah air wudhu. Air ini dikumpulkan dan digunakan kembali untuk
                                     menyiram tanaman, sehingga tidak ada air yang terbuang sia-sia.
                                 </p>
                                 <a href="{{ route('program-kerja') }}#konservasi-air"
-                                    class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
+                                    class="bg-secondary hover:bg-[#95822c] text-white transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
                                     BACA SELENGKAPNYA
                                 </a>
                             </div>
@@ -434,13 +441,13 @@
                                     </h1>
                                 </div>
                                 <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
-                                <p class="h-32 text-sm lg:text-base text-white text-justify mt-2">
+                                <p class="h-32 text-white text-justify mt-2">
                                     Melalui program Hemat Listrik, sekolah mendorong warga sekolah untuk menggunakan
                                     listrik secara bijak, mematikan lampu dan perangkat elektronik saat tidak
                                     digunakan, serta memanfaatkan cahaya alami di siang hari.
                                 </p>
                                 <a href="{{ route('program-kerja') }}#konservasi-energi"
-                                    class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
+                                    class="bg-secondary hover:bg-[#95822c] text-white transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
                                     BACA SELENGKAPNYA
                                 </a>
                             </div>
@@ -456,14 +463,14 @@
                                     </h1>
                                 </div>
                                 <div class="h-1 mx-auto bg-secondary w-full mt-2"></div>
-                                <p class="h-32 text-sm lg:text-base text-white text-justify mt-2">
+                                <p class="h-32 text-white text-justify mt-2">
                                     Sekolah memastikan lingkungan tetap bersih dan bebas banjir dengan program
                                     Sanitasi dan Drainase. Ini mencakup perawatan fasilitas sanitasi, saluran air,
                                     serta pembersihan rutin untuk menjaga kebersihan dan kesehatan lingkungan
                                     sekolah.
                                 </p>
-                                <a href="{{ route('program-kerja') }}#sanitasi-dan-drainase"
-                                    class="bg-yellow-500 hover:bg-secondary transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
+                                <a href="{{ route('program-kerja') }}#sanitasi-drainase"
+                                    class="bg-secondary hover:bg-[#95822c] text-white transition-all ease-in-out duration-500 p-2 inline-block mt-10 rounded">
                                     BACA SELENGKAPNYA
                                 </a>
                             </div>

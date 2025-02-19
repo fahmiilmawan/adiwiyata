@@ -24,15 +24,14 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: 'Poppins', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        * {
+            font-family: 'Poppins';
         }
 
-        /* Hero Section */
-        .slide {
-            background-image: url('{{ asset('image/slider-1.jpg') }}');
-            background-size: cover;
-            background-position: center;
+        html,
+        body {
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         /* Scroll Behavior */
@@ -40,8 +39,8 @@
         #pengolahan-sampah-anorganik,
         #konservasi-air,
         #konservasi-energi,
-        #sanitasi-dan-drainase {
-            scroll-margin-top: 80px;
+        #sanitasi-drainase {
+            scroll-margin-top: 50px;
         }
 
         #kompos,
@@ -55,7 +54,7 @@
         #limbah-air-wudhu,
         #hemat-listrik,
         #sanitasi-dan-drainase {
-            scroll-margin-top: 80px;
+            scroll-margin-top: 70px;
         }
 
         /* Scrolling Bar */
@@ -70,99 +69,18 @@
     @include('layouts.partials.navbar')
 
     <!-- Hero Section -->
-    <section class="hero-section bg-green-500/15" id="home">
-        <div class="relative w-full h-[100vh] overflow-hidden">
 
-            <!-- Logo and Text Container (Fixed Position) -->
-            <div class="absolute w-full h-full flex flex-col items-center justify-center z-10 p-2 lg:p-0">
-                <div class="container mx-auto">
-                    <div class="mt-0 lg:mt-40">
 
-                        <!-- Logo -->
-                        <img src="{{ asset('image/Adiwiyata.png') }}" alt=""
-                            class="sm:w-[90%] md:w-[80%] lg:w-[55%] justify-self-center" />
-
-                        <!-- Text -->
-                        <div class="text-center text-white mt-5">
-                            <h1 class="text-base sm:text-2xl md:text-4xl font-bold">
-                                PROGRAM KERJA - ADIWIYATA
-                            </h1>
-                            <h1 class="text-base sm:text-2xl md:text-4xl font-bold">
-                                SMK TARUNA HARAPAN 1 CIPATAT
-                            </h1>
-                        </div>
-                    </div>
-
-                    <!-- Kategori -->
-                    <div class="px-2 lg:px-4 hidden lg:flex">
-                        <div class="container mx-auto p-3 lg:p-5">
-                            <div class="py-5 rounded">
-                                <div class="snap-mandatory overflow-x-scroll flex mt-5 h-auto rounded">
-                                    <div class="shrink-0 gap-5 flex items-center">
-
-                                        <div class="bg-primary border-2 border-secondary p-5 rounded w-[27rem]">
-                                            <div class="items-center gap-2 justify-items-center">
-                                                <i class="fa fa-leaf text-4xl text-secondary"></i>
-                                                <h1 class="lg:text-xl font-semibold text-white">
-                                                    Pengolahan Sampah Organik
-                                                </h1>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-primary border-2 border-secondary p-5 rounded w-[27rem]">
-                                            <div class="items-center gap-2 justify-items-center">
-                                                <i class="fa fa-recycle text-4xl text-secondary"></i>
-                                                <h1 class="lg:text-xl font-semibold text-white">
-                                                    Pengolahan Sampah Anorganik
-                                                </h1>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-primary border-2 border-secondary p-5 rounded w-[27rem]">
-                                            <div class="items-center gap-2 justify-center justify-items-center">
-                                                <i class="fa fa-tint text-4xl text-secondary"></i>
-                                                <h1 class="lg:text-xl font-semibold text-white">
-                                                    Konservasi Air
-                                                </h1>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-primary border-2 border-secondary p-5 rounded w-[27rem]">
-                                            <div class="items-center gap-2 justify-items-center">
-                                                <i class="fa fa-bolt text-4xl text-secondary"></i>
-                                                <h1 class="lg:text-xl font-semibold text-white">
-                                                    Konservasi Energi
-                                                </h1>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-primary border-2 border-secondary p-5 rounded w-[27rem]">
-                                            <div class="items-center gap-2 justify-center justify-items-center">
-                                                <i class="fa fa-water text-4xl text-secondary"></i>
-                                                <h1 class="lg:text-xl font-semibold text-white">
-                                                    Sanitasi & Drainase
-                                                </h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="bg-quaternary">
+        <div class="relative top-16 bg-primary container mx-auto px-2 lg:px-4">
+            <div class="px-3 lg:px-5">
+                <div class="flex text-white p-2 gap-5 items-center">
+                    <a href="{{ route('index') }}" class="fa-solid fa-arrow-left"></a>
+                    <h6 class="text-xl">Program Kerja Adiwiyata</h6>
                 </div>
             </div>
-
-            <!-- Carousel Container -->
-            <div class="carousel flex h-full inset-0 mix-blend-overlay">
-                <!-- Duplicate first slide at the end -->
-                <div class="slide min-w-full h-full"></div>
-            </div>
         </div>
-    </section>
-
-    <div class="bg-quaternary pt-5">
-
-        <div class="p-2 lg:p-4">
+        <div class="p-2 lg:p-4 mt-5">
             <div class="container mx-auto">
                 <div class="p-3 lg:p-5">
 
@@ -1573,7 +1491,7 @@
                     </section>
 
                     <!-- Program Kerja => Sanitasi & Drainase -->
-                    <section class="sanitasi-dan-drainase py-5" id="sanitasi-dan-drainase">
+                    <section class="sanitasi-dan-drainase py-5" id="sanitasi-drainase">
                         <div class="bg-primary p-2 text-center rounded">
                             <h1 class="md:text-xl lg:text-2xl text-white font-bold">SANITASI & DRAINASE</h1>
                         </div>

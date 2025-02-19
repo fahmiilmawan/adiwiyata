@@ -70,21 +70,21 @@
 
                                 <!-- Kader Main Dropdown Menu -->
                                 <div
-                                    class="dropdown-menu absolute hidden group-hover:block w-60 bg-primary rounded-md shadow-lg py-1">
+                                    class="dropdown-menu absolute hidden group-hover:block w-60 bg-primary rounded-md shadow-lg">
                                     <a href="{{ route('kader') }}#tanaman-dan-pembibitan"
-                                        class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                        class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                         Tanaman & Pembibitan</a>
                                     <a href="{{ route('kader') }}#kompos-dan-bank-sampah"
-                                        class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                        class="block px-4 border-b-2 border-b-secondary py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                         Kompos & Bank Sampah</a>
                                     <a href="{{ route('kader') }}#sanitasi-dan-kamar-mandi"
-                                        class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                        class="block px-4 border-b-2 border-b-secondary py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                         Sanitasi & Kamar Mandi</a>
                                     <a href="{{ route('kader') }}#taman-dan-hutan-sekolah"
-                                        class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                        class="block px-4 border-b-2 border-b-secondary py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                         Taman & Hutan Sekolah</a>
                                     <a href="{{ route('kader') }}#kreasi-daur-ulang-sampah"
-                                        class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                        class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 mt-1 rounded">
                                         Kreasi Daur Ulang Sampah</a>
                                 </div>
                             </div>
@@ -102,9 +102,9 @@
 
                                 <!-- Program Kerja Main Dropdown Menu -->
                                 <div
-                                    class="dropdown-menu absolute hidden group-hover:block w-72 bg-primary rounded-md shadow-lg py-1">
+                                    class="dropdown-menu absolute hidden group-hover:block w-72 bg-primary rounded-md shadow-lg">
                                     <div
-                                        class="dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                        class="border-b-2 border-b-secondary dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center my-1 rounded">
                                         <span class="">Pengolahan Sampah Organik</span>
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -112,39 +112,39 @@
                                         </svg>
 
                                         <!-- Nested Dropdown for Pengolahan Sampah Organik -->
-                                        <div class="nested-dropdown absolute w-48 bg-primary rounded-md shadow-lg py-1">
+                                        <div class="nested-dropdown absolute w-48 bg-primary rounded-md shadow-lg">
                                             <a href="{{ route('program-kerja') }}#kompos"
-                                                class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                                 Kompos
                                             </a>
                                             <a href="{{ route('program-kerja') }}#budidaya-maggot"
-                                                class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                                 Budidaya Maggot
                                             </a>
                                             <a href="{{ route('program-kerja') }}#eco-enzyme"
-                                                class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                                 Eco Enzyme
                                             </a>
                                             <a href="{{ route('program-kerja') }}#mikroorganisme-lokal"
-                                                class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                                 Mikroorganisme Lokal
                                             </a>
                                             <a href="{{ route('program-kerja') }}#air-lindi"
-                                                class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                                 Air Lindi
                                             </a>
                                             <a href="{{ route('program-kerja') }}#eco-derma"
-                                                class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                                 Eco Derma
                                             </a>
                                             <a href="{{ route('program-kerja') }}#dekomposter"
-                                                class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 mt-1 rounded">
                                                 Dekomposter
                                             </a>
                                         </div>
                                     </div>
                                     <div
-                                        class="dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                        class="border-b-2 border-b-secondary dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center my-1 rounded">
                                         <span class="">Pengolahan Sampah Anorganik</span>
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -153,15 +153,15 @@
 
                                         <!-- Nested Dropdown for Pengolahan Sampah Anorganik -->
                                         <div
-                                            class="nested-dropdown absolute w-48 bg-primary hover:bg-secondary transition-all ease-in-out duration-500 rounded-md shadow-lg py-1">
+                                            class="nested-dropdown absolute w-48 bg-primary hover:bg-secondary transition-all ease-in-out duration-500 rounded-md shadow-lg">
                                             <a href="{{ route('program-kerja') }}#bank-sampah"
-                                                class="block px-4 py-2 text-sm text-white">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white rounded">
                                                 Bank Sampah
                                             </a>
                                         </div>
                                     </div>
                                     <div
-                                        class="dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                        class="border-b-2 border-b-secondary dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center my-1 rounded">
                                         <span class="">Konservasi Air</span>
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -170,15 +170,15 @@
 
                                         <!-- Nested Dropdown for Konservasi Air -->
                                         <div
-                                            class="nested-dropdown absolute w-48 bg-primary hover:bg-secondary transition-all ease-in-out duration-500 rounded-md shadow-lg py-1">
+                                            class="nested-dropdown absolute w-48 bg-primary hover:bg-secondary transition-all ease-in-out duration-500 rounded-md shadow-lg">
                                             <a href="{{ route('program-kerja') }}#limbah-air-wudhu"
-                                                class="block px-4 py-2 text-sm text-white">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white rounded">
                                                 Limbah Air Wudhu
                                             </a>
                                         </div>
                                     </div>
                                     <div
-                                        class="dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                        class="border-b-2 border-b-secondary dropdown-item relative px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center my-1 rounded">
                                         <span class="">Konservasi Energi</span>
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
@@ -188,15 +188,15 @@
 
                                         <!-- Nested Dropdown for Konservasi Energi -->
                                         <div
-                                            class="nested-dropdown absolute w-48 bg-primary hover:bg-secondary transition-all ease-in-out duration-500 rounded-md shadow-lg py-1">
+                                            class="nested-dropdown absolute w-48 bg-primary hover:bg-secondary transition-all ease-in-out duration-500 rounded-md shadow-lg">
                                             <a href="{{ route('program-kerja') }}#hemat-listrik"
-                                                class="block px-4 py-2 text-sm text-white">
+                                                class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white rounded">
                                                 Hemat Listrik
                                             </a>
                                         </div>
                                     </div>
                                     <a href="{{ route('program-kerja') }}#sanitasi-dan-drainase"
-                                        class="block px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                        class="block border-b-2 border-b-secondary px-4 py-2 text-sm text-white hover:bg-secondary transition-all ease-in-out duration-500 rounded">
                                         Sanitasi & Drainase
                                     </a>
                                 </div>
@@ -205,7 +205,9 @@
                     </div>
 
                     <div class="hidden lg:block">
-                        <a href="{{ route('koleksi') }}" class="bg-secondary hover:bg-yellow-500 transition-all ease-in-out duration-500 text-white px-4 py-2 rounded-lg text-sm font-medium">Koleksi Tanaman</a>
+                        <a href="{{ route('koleksi') }}"
+                            class="bg-secondary hover:bg-[#95822c] transition-all ease-in-out duration-500 text-white px-4 py-2 rounded-lg text-sm font-medium">Koleksi
+                            Tanaman</a>
                     </div>
 
                     <!-- Mobile menu button -->
@@ -225,17 +227,17 @@
                 <div class="hidden lg:hidden mobile-menu">
                     <div class="px-2 pt-2 pb-3 space-y-1">
                         <a href="{{ route('index') }}#home"
-                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 rounded">
                             Home
                         </a>
                         <a href="{{ route('index') }}#about"
-                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 rounded">
                             About
                         </a>
 
                         <div class="space-y-1">
                             <button
-                                class="kader-submenu-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                class="kader-submenu-button border-b-2 border-b-secondary w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center rounded">
                                 <span>Kader</span>
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -244,23 +246,23 @@
                             </button>
                             <div class="hidden kader-submenu pl-4">
                                 <a href="{{ route('kader') }}#tanaman-dan-pembibitan"
-                                    class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                    class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                     Tanaman & Pembibitan
                                 </a>
                                 <a href="{{ route('kader') }}#kompos-dan-bank-sampah"
-                                    class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                    class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                     Kompos & Bank Sampah
                                 </a>
                                 <a href="{{ route('kader') }}#sanitasi-dan-kamar-mandi"
-                                    class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                    class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                     Sanitasi & Kamar Mandi
                                 </a>
                                 <a href="{{ route('kader') }}#taman-dan-hutan-sekolah"
-                                    class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                    class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                     Taman & Hutan Sekolah
                                 </a>
                                 <a href="{{ route('kader') }}#kreasi-daur-ulang-sampah"
-                                    class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                    class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                     Kreasi Daur Ulang Sampah
                                 </a>
                             </div>
@@ -268,7 +270,7 @@
 
                         <div class="space-y-1">
                             <button
-                                class="mobile-submenu-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                class="mobile-submenu-button border-b-2 border-b-secondary w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center rounded">
                                 <span>Program Kerja</span>
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -278,7 +280,7 @@
                             <div class="hidden mobile-submenu pl-4">
                                 <div class="space-y-1">
                                     <button
-                                        class="pso-nested-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                        class="pso-nested-button border-b-2 border-b-secondary w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center my-1 rounded">
                                         <span>Pengolahan Sampah Organik</span>
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
@@ -288,38 +290,38 @@
                                     </button>
                                     <div class="hidden pso-nested-menu pl-4">
                                         <a href="{{ route('program-kerja') }}#kompos"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                             Kompos
                                         </a>
                                         <a href="{{ route('program-kerja') }}#budidaya-maggot"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                             Budidaya Maggot
                                         </a>
                                         <a href="{{ route('program-kerja') }}#eco-enzyme"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                             Eco Enzyme
                                         </a>
                                         <a href="{{ route('program-kerja') }}#mikroorganisme-lokal"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                             Mikroorganisme Lokal
                                         </a>
                                         <a href="{{ route('program-kerja') }}#air-lindi"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                             Air Lindi
                                         </a>
                                         <a href="{{ route('program-kerja') }}#eco-derma"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                             Eco Derma
                                         </a>
                                         <a href="{{ route('program-kerja') }}#dekomposter"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                             Dekomposter
                                         </a>
                                     </div>
                                 </div>
                                 <div class="space-y-1">
                                     <button
-                                        class="psa-nested-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                        class="psa-nested-button border-b-2 border-b-secondary w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center my-1 rounded">
                                         <span>Pengolahan Sampah Anorganik</span>
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
@@ -329,14 +331,14 @@
                                     </button>
                                     <div class="hidden psa-nested-menu pl-4">
                                         <a href="{{ route('program-kerja') }}#bank-sampah"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 rounded">
                                             Bank Sampah
                                         </a>
                                     </div>
                                 </div>
                                 <div class="space-y-1">
                                     <button
-                                        class="ka-nested-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                        class="ka-nested-button border-b-2 border-b-secondary w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center my-1 rounded">
                                         <span>Konservasi Air</span>
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
@@ -346,14 +348,14 @@
                                     </button>
                                     <div class="hidden ka-nested-menu pl-4">
                                         <a href="{{ route('program-kerja') }}#limbah-air-wudhu"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 rounded">
                                             Limbah Air Wudhu
                                         </a>
                                     </div>
                                 </div>
                                 <div class="space-y-1">
                                     <button
-                                        class="ke-nested-button w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center">
+                                        class="ke-nested-button border-b-2 border-b-secondary w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 flex justify-between items-center my-1 rounded">
                                         <span>Konservasi Energi</span>
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
@@ -363,18 +365,21 @@
                                     </button>
                                     <div class="hidden ke-nested-menu pl-4">
                                         <a href="{{ route('program-kerja') }}#hemat-listrik"
-                                            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                            class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 rounded">
                                             Hemat Listrik
                                         </a>
                                     </div>
                                 </div>
                                 <a href="{{ route('program-kerja') }}#sanitasi-dan-drainase"
-                                    class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500">
+                                    class="block border-b-2 border-b-secondary px-3 py-2 text-base font-medium text-white hover:bg-secondary transition-all ease-in-out duration-500 my-1 rounded">
                                     Sanitasi & Drainase
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('koleksi') }}" class="bg-secondary hover:bg-yellow-500 block transition-all ease-in-out duration-500 text-white px-4 py-2 rounded-lg text-sm font-medium">Koleksi Tanaman</a>
+                        <a href="{{ route('koleksi') }}"
+                            class="bg-secondary hover:bg-yellow-500 block transition-all ease-in-out duration-500 text-white px-4 py-2 mt-5 rounded-lg text-sm font-medium">
+                            Koleksi Tanaman
+                        </a>
                     </div>
                 </div>
             </div>

@@ -46,8 +46,7 @@
                 </div>
                 <div class="">
                     <h1 class="text-xl font-semibold">Contact</h1>
-                    <div
-                        class="bg-secondary h-1 shadow-2xl shadow-white lg:w-1/4"></div>
+                    <div class="bg-secondary h-1 shadow-2xl shadow-white lg:w-1/4"></div>
                     <div class="">
                         <div class="flex gap-1 items-center mt-2">
                             <i class="fa-solid fa-envelope"></i>
@@ -68,20 +67,22 @@
                 </div>
                 <div class="lg:text-center items-center">
                     <h1 class="text-xl font-semibold">Quick Link</h1>
-                    <div
-                        class="bg-secondary h-1 shadow-2xl shadow-white lg:mx-auto lg:w-1/4 mb-2"></div>
-                    <a href="{{ route('index') }}#home" class="block">Home</a>
-                    <a href="{{ route('index') }}#about" class="block">About</a>
-                    <a href="{{ route('kader') }}" class="block">Kader</a>
-                    <a href="{{ route('program-kerja') }}" class="block">Program Kerja</a>
-                    <a href="" class="block">Koleksi</a>
+                    <div class="bg-secondary h-1 shadow-2xl shadow-white lg:mx-auto lg:w-1/4 mb-2"></div>
+                    <a href="{{ route('index') }}#home" class="block hover:underline">Home</a>
+                    <a href="{{ route('index') }}#about" class="block hover:underline">About</a>
+                    <a href="{{ route('kader') }}" class="block hover:underline">Kader</a>
+                    <a href="{{ route('program-kerja') }}" class="block hover:underline">Program Kerja</a>
+                    <a href="" class="block hover:underline">Koleksi</a>
                 </div>
                 <div class="text-center items-center">
                     <h1 class="text-xl font-semibold">Follow Us</h1>
-                    <div
-                        class="bg-secondary h-1 shadow-2xl shadow-white mx-auto lg:w-1/4 mb-2"></div>
-                    <i class="fa-brands fa-instagram fa-2x"></i>
-                    <i class="fa-brands fa-youtube fa-2x"></i>
+                    <div class="bg-secondary h-1 shadow-2xl shadow-white mx-auto lg:w-1/4 mb-2"></div>
+                    <a href="https://instagram.com/smktarunaharapancipatat" class="">
+                        <i class="fa-brands fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="https://youtube.com/@tarpanmedia" class="">
+                        <i class="fa-brands fa-youtube fa-2x"></i>
+                    </a>
                 </div>
             </div>
         </div>
