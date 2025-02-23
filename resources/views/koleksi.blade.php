@@ -49,8 +49,8 @@
     @include('layouts.partials.navbar')
 
     <div class="bg-quaternary">
-        <div class="relative top-16 bg-primary container mx-auto px-2 lg:px-4">
-            <div class="px-3 lg:px-5">
+        <div class="relative top-16 bg-primary px-5 lg:px-9">
+            <div class="container mx-auto">
                 <div class="flex text-white p-2 gap-5 items-center">
                     <a href="{{ route('index') }}" class="fa-solid fa-arrow-left"></a>
                     <h6 class="text-xl">Koleksi Tanaman Adiwiyata</h6>

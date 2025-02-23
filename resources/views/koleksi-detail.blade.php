@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Detail - {{ $tanaman->nama_tanaman }}</title>
+    <link rel="shortcut icon" href="{{ asset('image/logo-adiwiyata.png') }}" type="image/x-icon">
 </head>
 
 <body>
     @include('layouts.partials.navbar')
 
     <div class="bg-quaternary">
-        <div class="relative top-16 bg-primary container mx-auto px-2 lg:px-4">
-            <div class="px-3 lg:px-5">
+        <div class="relative top-16 bg-primary px-5 lg:px-9">
+            <div class="container mx-auto">
                 <div class="flex text-white p-2 gap-5 items-center">
-                    <a href="{{ route('index') }}" class="fa-solid fa-arrow-left"></a>
+                    <a href="{{ route('koleksi') }}" class="fa-solid fa-arrow-left"></a>
                     <p class="">Kembali</p>
                 </div>
                 <h1 class="text-2xl text-white font-semibold">{{ $tanaman->nama_tanaman }}</h1>
