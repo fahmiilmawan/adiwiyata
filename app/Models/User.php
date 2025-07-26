@@ -71,7 +71,7 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasMany(Tanaman::class);
     }
 
-    public function canAccessFilament(): bool
+    public function canAccessPanel(): bool
     {
         return true;
     }
